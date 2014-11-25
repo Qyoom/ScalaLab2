@@ -1,0 +1,16 @@
+initial slope for f1 with x1=3 and x2=7 is 10.0
+initial slope for f2 with x1=3 and x2=7 is 15.0
+
+initial slope for f1 with x1=7 and x2=3 is 10.0
+initial slope for f2 with x1=7 and x2=3 is 15.0
+
+initial slope for f1 with x1=5 and x2=12 is 17.0
+initial slope for f2 with x1=5 and x2=12 is 25.5
+
+initial slope for f1 with x1=-5 and x2=12 is 7.0
+initial slope for f2 with x1=-5 and x2=12 is 10.5
+
+initial slope for f1 with x1=12 and x2=-5 is 7.0
+initial slope for f2 with x1=12 and x2=-5 is 10.5
+
+--------------------------------------------------
