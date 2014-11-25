@@ -42,7 +42,7 @@ object EuclideanLab1 extends App {
 	val C = List(-3.6, -5.0, -6.3, -7.9)
 	
 	val res1 = eucDist(A, B)
-	println("res1: " + res1)
+	println("res1: " + res1) // 2.651414716712571
 	
 	val res2 = eucDist(A, C)
 	println("res2: " + res2)

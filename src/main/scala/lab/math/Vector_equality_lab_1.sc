@@ -12,4 +12,11 @@ object Vector_equality_lab_1 {
    
 	(a2 - a1) == (b2 - b1)                    //> res0: Boolean = true
 	(a2 - a1) == (b2 - b3)                    //> res1: Boolean = false
+	
+	val a3 = DenseVector(0,0,0)               //> a3  : breeze.linalg.DenseVector[Int] = DenseVector(0, 0, 0)
+	val a4 = DenseVector(1,-1,2)              //> a4  : breeze.linalg.DenseVector[Int] = DenseVector(1, -1, 2)
+	val b4 = DenseVector(1,1,-2)              //> b4  : breeze.linalg.DenseVector[Int] = DenseVector(1, 1, -2)
+	val b5 = DenseVector(0,2,-4)              //> b5  : breeze.linalg.DenseVector[Int] = DenseVector(0, 2, -4)
+	(b4 - b5) == (a3 - a4)                    //> res2: Boolean = false
+	
 }
