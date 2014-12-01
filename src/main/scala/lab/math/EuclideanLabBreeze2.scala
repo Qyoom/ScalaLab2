@@ -14,7 +14,7 @@ object EuclideanLabBreeze2 extends App {
 	
 	///// Computes Euclidean distance ////////////////////////////////////////
 	def eucDist(X: DenseVector[Double], Y: DenseVector[Double]): Double = {
-  		require(X.length == X.length)
+  		require(X.length == Y.length)
   		sqrt(pow(X - Y, 2).sum)
 	}
 	
@@ -39,10 +39,15 @@ object EuclideanLabBreeze2 extends App {
 	val res4 = eucNorm(C)
 	println("res4: " + res4) // 11.83469475736489
 	
+	println("res4b: " + eucNorm(DenseVector(1/2d, 1/2d, 1/2d, 1/2d)))
+	println("res4c: " + eucNorm(DenseVector(1,-2,2)))
+	
+	// Breeze, built in norm
 	println("norm(A): " + norm(A))
 	println("norm(C): " + norm(C))
 	
 	///// Minkowski norm /////////////////////////////////////////////
+	// Regularizer?
 	
 	def minkNorm(X0: DenseVector[Double], n: Int): Double = {
 		val X1 = if(n % 2 == 0) X0 else X0.map(x => abs(x)) // TODO: This seems heavy
