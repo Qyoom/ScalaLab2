@@ -40,6 +40,7 @@ object EuclideanLab1 extends App {
 	val A = List(3.0, 4.1, 4.8, 6.0)
 	val B = List(3.6, 5.0, 6.3, 7.9)
 	val C = List(-3.6, -5.0, -6.3, -7.9)
+	val D = List(-3.6, -7.9, -5.0, -6.3)
 	
 	val res1 = eucDist(A, B)
 	println("res1: " + res1) // 2.651414716712571
@@ -99,7 +100,8 @@ object EuclideanLab1 extends App {
 	println("res10: " + minkNorm(A, 100))
 	
 	println("res11: " + minkNorm(C, 3))
-	println("res11.5: " + minkNorm(C, 100))
+	println("res11.1: " + minkNorm(C, 100))
+	println("res11.2: " + minkNorm(D, 100))
 	println("res12: " + minkNorm(B, 3))
 }
 
