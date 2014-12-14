@@ -94,4 +94,16 @@ object LimitFuncComposition_1 {
   f6(0.000001)                                    //> res48: Double = 3.0000029997978572
   f6(0.001)                                       //> res49: Double = 3.0030009999997276
   f6(0.01)                                        //> res50: Double = 3.0301000000000133
+  
+  val f7 = compose({x => 9 * (x - 5)}, {x => pow(x,2) - 25})
+                                                  //> f7  : lab.math.aleks.calculus_prep.LimitFuncComposition_1.R => Double = <fu
+                                                  //| nction1>
+  f7(4)                                           //> res51: Double = 1.0
+  f7(4.9)                                         //> res52: Double = 0.9090909090909105
+  f7(4.99)                                        //> res53: Double = 0.9009009009008988
+  f7(4.999)                                       //> res54: Double = 0.9000900090008327
+  f7(5.001)                                       //> res55: Double = 0.8999100089991675
+  f7(5.01)                                        //> res56: Double = 0.8991008991009012
+  f7(5.1)                                         //> res57: Double = 0.8910891089108897
+  f7(6)                                           //> res58: Double = 0.8181818181818182
 }

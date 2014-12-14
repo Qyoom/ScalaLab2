@@ -47,4 +47,7 @@ object BinomialTheorem extends App {
     
     val bn_4_3 = binomialCoeficients(4, 3)
     println("------> bn_4_3: " + bn_4_3)
+    
+    val bn_16_4 = binomialCoeficients(16, 4)
+    println("------> bn_16_4: " + bn_16_4)
 }

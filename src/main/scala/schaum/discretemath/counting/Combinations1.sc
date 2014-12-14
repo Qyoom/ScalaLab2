@@ -40,4 +40,13 @@ object Combinations1 {
   fac(18)                                         //> fac(18): -898433024
                                                   //| res5: Int = -898433024
   
+  // ALEKS Intro Stats and Probability
+  binomialCoeficients(12, 7)                      //> res6: Double = 792.0
+  binomialCoeficients(8, 6)                       //> res7: Double = 28.0
+  binomialCoeficients(8, 2)                       //> res8: Double = 28.0
+  binomialCoeficients(5, 1)                       //> res9: Double = 5.0
+  binomialCoeficients(5, 4)                       //> res10: Double = 5.0
+  binomialCoeficients(15, 5)                      //> res11: Double = 3003.0
+  // TOO BIG!
+  binomialCoeficients(15, 10)                     //> res12: Double = -547.733544973545
 }
