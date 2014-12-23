@@ -1,5 +1,7 @@
 package lab.functions
 
+import math._
+
 object SequenceProgression_lab {
 
   def seqProg(n: Double, seqOp: Double=>Double, numberOfRecursions: Int): List[Double] = {
@@ -23,4 +25,7 @@ object SequenceProgression_lab {
                                                   //> geomProg  : (Double, Double, Int) => List[Double] = <function3>
   geomProg(3, 2d, 5)                              //> res2: List[Double] = List(3.0, 6.0, 12.0, 24.0, 48.0, 96.0)
   geomProg(3, 0.5, 5)                             //> res3: List[Double] = List(3.0, 1.5, 0.75, 0.375, 0.1875, 0.09375)
+  
+  3 * pow(2, 5)                                   //> res4: Double = 96.0
+  3 * pow(0.5, 5)                                 //> res5: Double = 0.09375
 }
