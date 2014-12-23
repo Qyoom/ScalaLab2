@@ -20,7 +20,7 @@ object BinomialTheorem extends App {
     } // end binomialCoeficients
     
     /********** inits ****************/
-    
+    /*
     val bn_10_7 = binomialCoeficients(10, 7)
     println("------> bn_10_7: " + bn_10_7)
     
@@ -50,4 +50,5 @@ object BinomialTheorem extends App {
     
     val bn_16_4 = binomialCoeficients(16, 4)
     println("------> bn_16_4: " + bn_16_4)
+    */
 }

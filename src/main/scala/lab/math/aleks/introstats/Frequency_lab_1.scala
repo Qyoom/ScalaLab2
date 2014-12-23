@@ -6,22 +6,29 @@ object Frequency_lab_1 extends App {
 	  val sorted = data0.sorted
 	  val data1 = sorted.drop(sorted.indexWhere((x => x >= startAt)))
 	  
-	  def inter(data: List[Int], upperBound: Double, accum: List[(Int, Double)]): List[(Int, Double)] = {
+	  def inter(data: List[Int], upperBound: Double, accum: List[(Int, Double, Double)]): List[(Int, Double, Double)] = {
 		  val split = data.splitAt(data.indexWhere(x => x > upperBound))
-		  println(split)
+		  //println(split)
+		  
+		  val midpoint = upperBound - (classSize / 2d)
 		  
 		  // TODO: This is flawed! It's hacked and doesn't account for empty classes between populated classes.
 		  if(split._1 == Nil) {
-			  (split._2.length, upperBound) :: accum
+			  (split._2.length, midpoint, upperBound) :: accum
 		  }
 		  else if(split._2 != Nil) {
-			  inter(split._2, upperBound + classSize, ( split._1.length, upperBound) :: accum)
+			  inter(split._2, upperBound + classSize, (split._1.length, midpoint, upperBound) :: accum)
 		  }
 		  else accum
 	  }
 	  
-	  val grouped = inter(data1, startAt + classSize, List[(Int, Double)]())
-	  print(startAt); print(" "); println(grouped.reverse)
+	  // accum is (frequency, midpoint, upperBound)
+	  val grouped = inter(data1, startAt + classSize, List[(Int, Double, Double)]())
+	  println("---------------------------------------")
+	  println("initial:" + startAt)
+	  grouped.reverse.foreach { c =>
+	    println("frequency:" + c._1 + " midpoint:" + c._2 + " upperBound:" + c._3)
+	  }
   }
   
   def groupByNumClasses(data: List[Int], numClasses: Int) {

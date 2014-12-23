@@ -47,6 +47,7 @@ object Combinations1 {
   binomialCoeficients(5, 1)                       //> res9: Double = 5.0
   binomialCoeficients(5, 4)                       //> res10: Double = 5.0
   binomialCoeficients(15, 5)                      //> res11: Double = 3003.0
-  // TOO BIG!
+  // TOO BIG! But why? Look at 30,11 next!
   binomialCoeficients(15, 10)                     //> res12: Double = -547.733544973545
+  binomialCoeficients(30, 11)                     //> res13: Double = 17.59648548981882
 }
