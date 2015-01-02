@@ -3,7 +3,7 @@ package lab.math.vectorspace
 object line_function_lab_1 {
 
   /* y = mx + b
-   * i.e. Take two pairs of x,y coordinates and calulate slope and intercept,
+   * i.e. Take two pairs of x,y coordinates and calculate slope and intercept,
    * returning function that takes any x input and produces y output according
   	 * to calculated slope and intercept.
   	 */
@@ -25,4 +25,7 @@ object line_function_lab_1 {
   f1(-2)                                          //> res1: Double = -4.75
   f1(-3)                                          //> res2: Double = -6.0
   f1(5)                                           //> res3: Double = 4.0
+  
+  val f2 = line(5,-5)(1,1)                        //> slope:-1.5 intercept:2.5
+                                                  //| f2  : Double => Double = <function1>
 }
