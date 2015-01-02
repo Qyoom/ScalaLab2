@@ -40,18 +40,21 @@ object case_class_lab_2 {
   		case UnOp(op, _) => println("got UnOp with " + op + " operator.")
   		case BinOp(op, left, right) => println("got BinOp with " + op + " operator.")
   		case Number(num) => println("got number: " + num)
+  		case Var(x) => println("got Var: " + x)
   		case _ => println("something else")
   }                                               //> typeCheck: (e: lab.case_classes_pattern_matching.case_class_lab_2.Expr)Unit
                                                   //| 
-  
+  typeCheck(x)                                    //> got Var: x
   typeCheck(var_x)                                //> got UnOp with - operator.
   typeCheck(Number(7))                            //> got number: 7.0
+  typeCheck(BinOp("/", Number(1), Number(6)))     //> got BinOp with / operator.
+  //typeCheck(List(x, var_x)) // type error
   
   // Deconstruction. You can use a pattern instead of a simple identifier.
   
-  val exp = new BinOp("*", Number(5), Number(1))  //> exp  : lab.case_classes_pattern_matching.case_class_lab_2.BinOp = BinOp(*,N
-                                                  //| umber(5.0),Number(1.0))
-  val BinOp(op, left, right) = exp                //> op  : String = *
+  val expr = new BinOp("*", Number(5), Number(1)) //> expr  : lab.case_classes_pattern_matching.case_class_lab_2.BinOp = BinOp(*,
+                                                  //| Number(5.0),Number(1.0))
+  val BinOp(op, left, right) = expr               //> op  : String = *
                                                   //| left  : lab.case_classes_pattern_matching.case_class_lab_2.Expr = Number(5.
                                                   //| 0)
                                                   //| right  : lab.case_classes_pattern_matching.case_class_lab_2.Expr = Number(1
@@ -81,7 +84,7 @@ object case_class_lab_2 {
   def variable(v: Any) {
   		v match {
       case 0 => println("zero")
-      case somethingElse => println("not zero: "+ somethingElse)
+      case somethingElse => println("not zero: " + somethingElse)
 		}
 	}                                         //> variable: (v: Any)Unit
 	
@@ -96,12 +99,12 @@ object case_class_lab_2 {
 	
 	val pi = math.Pi                          //> pi  : Double = 3.141592653589793
 	E match {
-		case pi => "Pi is: " + pi // Here, pi is a variable since it's lower case.
+		case pi => "Pi is: " + pi // Here, pi is a local variable since it's lower case.
 		case _ => "something else"
 	}                                         //> res14: String = Pi is: 2.718281828459045
 	
 	E match {
-		case `pi` => "Pi is: " + pi // back-tics make pi refer to the constant.
+		case `pi` => "Pi is: " + pi // back-tics make pi refer to the free variable referencing the Pi constant.
 		case _ => "something else"
 	}                                         //> res15: String = something else
 	

@@ -6,8 +6,8 @@ import lab.math.NthRoot._
 
 object EuclideanLab1 extends App {
  
-	/* Length of a vector: You square each of the coordinates, and add up all 
-  	 * those squares; then take the square root of that sum. 
+	/* Length of a vector: You square each of the coordinates, and add 
+	 * up all those squares; then take the square root of that sum. 
   	 * --Goldsmith, U of Chicago (see ppt).
   	 * https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CB4QFjAA&url=http%3A%2F%2Fhum.uchicago.edu%2Ffaculty%2Fgoldsmith%2FCogSciCourse%2Fpowerpoint%2Fn-space.ppt&ei=KrtzVPfhE8j1iQKuvIDQBg&usg=AFQjCNELPtfLS4XQw8auGB-PjV_663IvYg&bvm=bv.80185997,d.cGE
   	 */
