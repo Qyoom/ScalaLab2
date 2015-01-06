@@ -15,6 +15,8 @@ object EuclideanLabBreeze2 extends App {
 	///// Computes Euclidean distance ////////////////////////////////////////
 	def eucDist(X: DenseVector[Double], Y: DenseVector[Double]): Double = {
   		require(X.length == Y.length)
+  		// square root of the sum of the squared difference
+  		// See Neural Networks and Learning Machines (3rd Edition).pdf, p.23
   		sqrt(pow(X - Y, 2).sum)
 	}
 	
@@ -26,8 +28,9 @@ object EuclideanLabBreeze2 extends App {
 	val res2 = eucDist(A, C)
 	println("res2: " + res2)
 
-	///// Computes Euclidean norm ////////////////////////////////////////////
+	///// Computes Euclidean norm (i.e. Euclidean length) ////////////////////////////////////
 	def eucNorm(X: DenseVector[Double]): Double = {
+		// square root of the sum of the squared elements
 		sqrt(pow(X, 2).sum)
 	}
 	

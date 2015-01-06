@@ -15,7 +15,7 @@ object MeanSquaredError {
                                                   //> C  : breeze.linalg.DenseVector[Double] = DenseVector(-3.6, -5.0, -6.3, -7.9)
                                                   //| 
 
-	// Mean squared error
+	// ------ Mean squared error ------ //
   def mse(v: DenseVector[Double]): Double = {
   		mean(pow((v - mean(v)), 2))
   }                                               //> mse: (v: breeze.linalg.DenseVector[Double])Double
@@ -25,4 +25,5 @@ object MeanSquaredError {
   mse(C)                                          //> res2: Double = 2.5250000000000004
   
  	mse(galtonChild)                          //> res3: Double = 6.333196796503433
+ 	
 }
