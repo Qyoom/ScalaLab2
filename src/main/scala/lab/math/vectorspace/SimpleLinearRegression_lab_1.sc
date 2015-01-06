@@ -32,6 +32,7 @@ object SimpleLinearRegression_lab_1 {
  	def sumSquaredResiduals(Y_obs: DenseVector[Double], Y_est: DenseVector[Double]): Double = {
   		require(Y_obs.length == Y_est.length)
   		// Sum of the squared difference
+  		println("mean of redisuals: " + mean((Y_obs - Y_est)))
   		pow(Y_obs - Y_est, 2).sum
 	}                                         //> sumSquaredResiduals: (Y_obs: breeze.linalg.DenseVector[Double], Y_est: bree
                                                   //| ze.linalg.DenseVector[Double])Double
@@ -51,15 +52,18 @@ object SimpleLinearRegression_lab_1 {
   // Derive the model from observations
   val fitLine = model(X, Y)                       //> slope:1.0357142857142858 intercept:-0.18214285714285694
                                                   //| fitLine  : Double => Double = <function1>
+  
   // Produce predicted outcome from model based on observed input
+  fitLine(6.5)                                    //> res0: Double = 6.550000000000001
   val predictions = for(x <- X) yield fitLine(x)  //> predictions  : breeze.linalg.DenseVector[Double] = DenseVector(2.0964285714
                                                   //| 28572, 2.9250000000000007, 4.271428571428572, 4.892857142857144, 6.03214285
                                                   //| 7142858, 7.4821428571428585, 8.000000000000002)
   // Compare via sum of squared residuals
-  sumSquaredResiduals(Y, predictions)             //> Jan 06, 2015 1:26:03 PM com.github.fommil.jni.JniLoader liberalLoad
+  sumSquaredResiduals(Y, predictions)             //> Jan 06, 2015 3:28:38 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/
-                                                  //| jniloader1676850040160626149netlib-native_system-osx-x86_64.jnilib
-                                                  //| res0: Double = 12.124999999999998
+                                                  //| jniloader5672202808711355880netlib-native_system-osx-x86_64.jnilib
+                                                  //| mean of redisuals: -9.516197353929913E-16
+                                                  //| res1: Double = 12.124999999999998
   
 
 }
