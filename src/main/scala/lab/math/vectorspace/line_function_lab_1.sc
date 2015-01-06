@@ -32,4 +32,6 @@ object line_function_lab_1 {
   
   val f2 = line(5,-5)(1,1)                        //> slope:-1.5 intercept:2.5
                                                   //| f2  : lab.math.vectorspace.line_function_lab_1.T => Double = <function1>
+  val f3 = line(-4,-2)(6,-6)                      //> slope:-0.4 intercept:-3.6
+                                                  //| f3  : lab.math.vectorspace.line_function_lab_1.T => Double = <function1>
 }

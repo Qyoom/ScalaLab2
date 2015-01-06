@@ -1,6 +1,7 @@
 package lab.math.vectorspace
 import lab.math.vectorspace.VectorSpaceFunctions_lab_1._
 
+
 object VectorSpaceFunctions_lab_ws {
   // y = mx + b
   // solveFor(y, x, yIntercept, slope, errorTerm)
