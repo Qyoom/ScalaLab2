@@ -9,8 +9,8 @@ object SimpleLinearRegression_lab_1 {
 	// ------ Simple Linear Regression Model------ //
 	
 	// Derive model from observations
-	// Model is function for y = mx + b
-	def model(X: DenseVector[Double], Y: DenseVector[Double]) = {
+	// Returns function for y = mx + b
+	def deriveModel(X: DenseVector[Double], Y: DenseVector[Double]) = {
 		val x_mean = mean(X)
 		val y_mean = mean(Y)
 		val x_diffs = X - x_mean
@@ -18,9 +18,16 @@ object SimpleLinearRegression_lab_1 {
 		val slope = (x_diffs :* y_diffs).sum / pow(x_diffs, 2).sum
 		val intercept = y_mean - slope * x_mean
 		println("slope:" + slope + " intercept:" + intercept)
-		(x: Double) => slope * x + intercept
-	}                                         //> model: (X: breeze.linalg.DenseVector[Double], Y: breeze.linalg.DenseVector[D
-                                                  //| ouble])Double => Double
+		(slope, intercept)
+	}                                         //> deriveModel: (X: breeze.linalg.DenseVector[Double], Y: breeze.linalg.DenseVe
+                                                  //| ctor[Double])(Double, Double)
+	
+	def fitLine(model: (Double, Double)) (x: Double): Double = {
+		val slope = model._1
+		val intercept = model._2
+		val y = slope * x + intercept
+		y
+	}                                         //> fitLine: (model: (Double, Double))(x: Double)Double
 	
   
   // ------ Squared error ---------------------- //
@@ -29,7 +36,7 @@ object SimpleLinearRegression_lab_1 {
    * minimizes the sum of the squared residuals between observed output and
    * estimated output (dependent variables).
    */
-  
+  // Diagnostic
  	def sumSquaredResiduals(Y_obs: DenseVector[Double], Y_est: DenseVector[Double]): Double = {
   		require(Y_obs.length == Y_est.length)
   		val Y_mean = mean(Y_obs)
@@ -56,20 +63,26 @@ object SimpleLinearRegression_lab_1 {
 	val Y = DenseVector(1.1, 4.4, 3.1, 5.2, 7.5, 5.4, 9.0)
                                                   //> Y  : breeze.linalg.DenseVector[Double] = DenseVector(1.1, 4.4, 3.1, 5.2, 7.
                                                   //| 5, 5.4, 9.0)
-  // ------ Test ------ //
-  
+	
+  // ------ Test ------------------------------- //
   // Derive the model from observations
-  val fitLine = model(X, Y)                       //> slope:1.0357142857142858 intercept:-0.18214285714285694
-                                                  //| fitLine  : Double => Double = <function1>
+  val model, (slope, intercept) = deriveModel(X, Y)
+                                                  //> slope:1.0357142857142858 intercept:-0.18214285714285694
+                                                  //| slope:1.0357142857142858 intercept:-0.18214285714285694
+                                                  //| model  : (Double, Double) = (1.0357142857142858,-0.18214285714285694)
+                                                  //| slope  : Double = 1.0357142857142858
+                                                  //| intercept  : Double = -0.18214285714285694
+  val predict = fitLine(model)_                   //> predict  : Double => Double = <function1>
   
-  // Produce predicted outcome from model based on observed input
-  val predictions = for(x <- X) yield fitLine(x)  //> predictions  : breeze.linalg.DenseVector[Double] = DenseVector(2.0964285714
+  // Produce predicted outcomes from model based on observed input
+  val predictions = for(x <- X) yield predict(x)  //> predictions  : breeze.linalg.DenseVector[Double] = DenseVector(2.0964285714
                                                   //| 28572, 2.9250000000000007, 4.271428571428572, 4.892857142857144, 6.03214285
                                                   //| 7142858, 7.4821428571428585, 8.000000000000002)
   // Compare via sum of squared residuals
-  val SSE = sumSquaredResiduals(Y, predictions)   //> Jan 06, 2015 5:13:37 PM com.github.fommil.jni.JniLoader liberalLoad
+  // Also prints lots of statistical diagnostics
+  val SSE = sumSquaredResiduals(Y, predictions)   //> Jan 06, 2015 6:01:02 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/
-                                                  //| jniloader7706488130363794005netlib-native_system-osx-x86_64.jnilib
+                                                  //| jniloader5736655583664091500netlib-native_system-osx-x86_64.jnilib
                                                   //| mean of redisuals: -9.516197353929913E-16
                                                   //| SST: 41.559999999999995
                                                   //| SSR: 29.43500000000001
@@ -82,4 +95,6 @@ object SimpleLinearRegression_lab_1 {
   val s = sqrt(MSE)                               //> s  : Double = 1.5572411502397436
   // Standard error of the estimated slope
 	val SEb1 = s / pow(X - mean(X), 2).sum    //> SEb1  : Double = 0.05675077078133176
+	// Using this statistic, it is possible to do a test of the null hypothesis that the population slope equals zero, that is, that there is no linear relationship between the variables x and y.
+	slope / SEb1                              //> res0: Double = 18.250224119510733
 }
