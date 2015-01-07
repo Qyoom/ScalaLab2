@@ -28,7 +28,6 @@ object SimpleLinearRegression_lab_1 {
 		val y = slope * x + intercept
 		y
 	}                                         //> fitLine: (model: (Double, Double))(x: Double)Double
-	
   
   // ------ Squared error ---------------------- //
   
@@ -65,6 +64,8 @@ object SimpleLinearRegression_lab_1 {
                                                   //| 5, 5.4, 9.0)
 	
   // ------ Test ------------------------------- //
+  // Referencing www.Aleks.com "Simple linear regression" for statistical formulas
+  
   // Derive the model from observations
   val model, (slope, intercept) = deriveModel(X, Y)
                                                   //> slope:1.0357142857142858 intercept:-0.18214285714285694
@@ -80,9 +81,9 @@ object SimpleLinearRegression_lab_1 {
                                                   //| 7142858, 7.4821428571428585, 8.000000000000002)
   // Compare via sum of squared residuals
   // Also prints lots of statistical diagnostics
-  val SSE = sumSquaredResiduals(Y, predictions)   //> Jan 06, 2015 6:01:02 PM com.github.fommil.jni.JniLoader liberalLoad
+  val SSE = sumSquaredResiduals(Y, predictions)   //> Jan 06, 2015 6:18:34 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/
-                                                  //| jniloader5736655583664091500netlib-native_system-osx-x86_64.jnilib
+                                                  //| jniloader5921250373827278566netlib-native_system-osx-x86_64.jnilib
                                                   //| mean of redisuals: -9.516197353929913E-16
                                                   //| SST: 41.559999999999995
                                                   //| SSR: 29.43500000000001
@@ -97,4 +98,8 @@ object SimpleLinearRegression_lab_1 {
 	val SEb1 = s / pow(X - mean(X), 2).sum    //> SEb1  : Double = 0.05675077078133176
 	// Using this statistic, it is possible to do a test of the null hypothesis that the population slope equals zero, that is, that there is no linear relationship between the variables x and y.
 	slope / SEb1                              //> res0: Double = 18.250224119510733
+	val SSR = pow(predictions - mean(Y), 2).sum
+                                                  //> SSR  : Double = 29.43500000000001
+  // With this statistic it is also possible to do a test of the null hypothesis, i.e. that there is no linear relationship between the variables x and y
+	(SSR/1)/MSE                               //> res1: Double = 12.138144329896912
 }
