@@ -9,7 +9,7 @@ object SimpleLinearRegression_lab_1 {
 	// ------ Simple Linear Regression Model------ //
 	
 	// Derive model from observations
-	// Returns function for y = mx + b
+	// Returns slope and intercept
 	def deriveModel(X: DenseVector[Double], Y: DenseVector[Double]) = {
 		val x_mean = mean(X)
 		val y_mean = mean(Y)
@@ -81,9 +81,9 @@ object SimpleLinearRegression_lab_1 {
                                                   //| 7142858, 7.4821428571428585, 8.000000000000002)
   // Compare via sum of squared residuals
   // Also prints lots of statistical diagnostics
-  val SSE = sumSquaredResiduals(Y, predictions)   //> Jan 06, 2015 6:18:34 PM com.github.fommil.jni.JniLoader liberalLoad
+  val SSE = sumSquaredResiduals(Y, predictions)   //> Jan 06, 2015 7:59:44 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/
-                                                  //| jniloader5921250373827278566netlib-native_system-osx-x86_64.jnilib
+                                                  //| jniloader684218549978983488netlib-native_system-osx-x86_64.jnilib
                                                   //| mean of redisuals: -9.516197353929913E-16
                                                   //| SST: 41.559999999999995
                                                   //| SSR: 29.43500000000001

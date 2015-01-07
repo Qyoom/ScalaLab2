@@ -13,7 +13,7 @@ object SequenceProgression_lab_2 {
   // Arithmetic progression
 	// is a sequence with a common constant interval between terms.
 	type I = Int
-  val arithProg = (n:I, interval:I, numRec:Int)=> seqProg[I](n, {n => n + interval}, numRec)
+  val arithProg = (n:I, interval:I, numRec:Int) => seqProg[I](n, {n => n + interval}, numRec)
                                                   //> arithProg  : (lab.functions.SequenceProgression_lab_2.I, lab.functions.Seque
                                                   //| nceProgression_lab_2.I, Int) => List[lab.functions.SequenceProgression_lab_2
                                                   //| .I] = <function3>
