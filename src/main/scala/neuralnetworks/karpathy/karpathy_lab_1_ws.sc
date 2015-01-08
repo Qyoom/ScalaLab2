@@ -78,8 +78,8 @@ object karpathy_lab_1_ws {
                                                   //| thy_lab_1_ws.T) = <function2>
 
   search1(x,y)                                    //> res6: (neuralnetworks.karpathy.karpathy_lab_1_ws.T, neuralnetworks.karpathy
-                                                  //| .karpathy_lab_1_ws.T, neuralnetworks.karpathy.karpathy_lab_1_ws.T) = (-5.10
-                                                  //| 6925345276396,-1.7644850436941457,2.894286558861661)
+                                                  //| .karpathy_lab_1_ws.T, neuralnetworks.karpathy.karpathy_lab_1_ws.T) = (-5.31
+                                                  //| 3994225160271,-1.836753201152012,2.8931454818357376)
   
   
 }
