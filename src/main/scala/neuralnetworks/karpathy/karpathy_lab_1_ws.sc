@@ -59,12 +59,35 @@ object karpathy_lab_1_ws {
 	    best_y = y_try
 	  }
 	}
-  best_out                                        //> res6: Double = -5.957175017054133
-  best_x                                          //> res7: Double = -1.990580955696768
-  best_y                                          //> res8: Double = 2.992681608856711
+  best_out                                        //> res6: Double = -5.953532407001166
+  best_x                                          //> res7: Double = -1.9903346559611246
+  best_y                                          //> res8: Double = 2.9912217973847364
   
   // ----- Recursive, immutable version ------------------ //
   
+  def randomLocalSearch(gate: (T,T)=>T)(tweak:Double)(iter:Int)(x:T,y:T) = {
+  		def inter(iter:Int, bestOut:T, bestX:T, bestY:T) = {
+  			if(iter > 0) {
+  				gate(x,y)
+  			}
+  			else 0.0
+  		}
+  		inter(iter, Double.NegativeInfinity, x, y)
+  }                                               //> randomLocalSearch: (gate: (neuralnetworks.karpathy.karpathy_lab_1_ws.T, neu
+                                                  //| ralnetworks.karpathy.karpathy_lab_1_ws.T) => neuralnetworks.karpathy.karpat
+                                                  //| hy_lab_1_ws.T)(tweak: Double)(iter: Int)(x: neuralnetworks.karpathy.karpath
+                                                  //| y_lab_1_ws.T, y: neuralnetworks.karpathy.karpathy_lab_1_ws.T)neuralnetworks
+                                                  //| .karpathy.karpathy_lab_1_ws.T
+
+  val forwardMultSearch = randomLocalSearch(forwardMultiplyGate)_
+                                                  //> forwardMultSearch  : Double => (Int => ((neuralnetworks.karpathy.karpathy_l
+                                                  //| ab_1_ws.T, neuralnetworks.karpathy.karpathy_lab_1_ws.T) => neuralnetworks.k
+                                                  //| arpathy.karpathy_lab_1_ws.T)) = <function1>
+  val search1 = forwardMultSearch(0.01)(100)      //> search1  : (neuralnetworks.karpathy.karpathy_lab_1_ws.T, neuralnetworks.kar
+                                                  //| pathy.karpathy_lab_1_ws.T) => neuralnetworks.karpathy.karpathy_lab_1_ws.T =
+                                                  //|  <function2>
+
+  search1(x,y)                                    //> res9: neuralnetworks.karpathy.karpathy_lab_1_ws.T = -6.0
   
   
 }
