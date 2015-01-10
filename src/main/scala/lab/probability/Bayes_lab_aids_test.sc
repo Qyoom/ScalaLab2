@@ -7,18 +7,31 @@ object Bayes_lab_aids_test {
 	 * P(B|A) = -------------------------------------
 	 *           P(A|B)P(B) + {1 - P(A|B)}{1 - P(B)}
 	 *
+	 *	 A = test positive
+	 * B = have disease
+	 *
+	 *            P(BA)
+	 * P(B|A) = --------
+	 *            P(A)
+	 *
+	 *
+	 *                       P(+|D)P(D)
+	 * P(D|+) = -------------------------------------
+	 *           P(+|D)P(D) + P(+|!D)P(!D)
+	 *
+	 *
 	 *                       P(+|D)P(D)
 	 * P(D|+) = -------------------------------------
 	 *           P(+|D)P(D) + {1 - P(+|D)}{1 - P(D)}
 	 */
   
-  // sensitivity
+  // sensitivity   P(+|D)
   val sensi = .997                                //> sensi  : Double = 0.997
   
-  // specificity
+  // specificity   P(-|!D)
   val speci = .985                                //> speci  : Double = 0.985
   
-  // prevalence in population
+  // prevalence in population   P(D)
   val preva = .001                                //> preva  : Double = 0.001
   
   // ----- equasion ---------- //
