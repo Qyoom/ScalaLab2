@@ -31,7 +31,7 @@ object SimpleLinearRegression_lab_1 {
   // ------ Squared error ---------------------- //
   
   /* Least Squares: The "best-fitting" line can be defined as the one which
-   * minimizes the sum of the squared residuals between observed output and
+   * minimizes the sum of the squared residuals (errors) between observed output and
    * estimated output (dependent variables).
    */
   // Diagnostic
