@@ -3,22 +3,27 @@ package lab.probability
 object Bayes_lab_aids_test {
 	// https://class.coursera.org/statinference-010/lecture/207
 	
-	/*                       P(A|B)P(B)
+	/*                  P(A|B)P(B)
+	 * P(B|A) = ---------------------------
+	 *           P(A|B)P(B) + P(A|!B)P(!B)
+   *
+	 *
+	 *                     P(A|B)P(B)
 	 * P(B|A) = -------------------------------------
-	 *           P(A|B)P(B) + {1 - P(A|B)}{1 - P(B)}
+	 *           P(A|B)P(B) + {1 - P(!A|!B)}{1 - P(B)}
 	 *
 	 *	 A = test positive
+	 * !A = test negative
 	 * B = have disease
+	 * !B = not have disease
 	 *
 	 *            P(BA)
 	 * P(B|A) = --------
 	 *            P(A)
 	 *
-	 *
 	 *                  P(+|D)P(D)
 	 * P(D|+) = ---------------------------
 	 *           P(+|D)P(D) + P(+|!D)P(!D)
-	 *
 	 *
 	 * P(+|!D) = 1 - P(-|!D)
 	 * P(!D) = 1 - P(D)
