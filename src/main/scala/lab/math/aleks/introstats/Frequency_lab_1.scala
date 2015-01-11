@@ -6,7 +6,8 @@ object Frequency_lab_1 extends App {
 	  val sorted = data0.sorted
 	  val data1 = sorted.drop(sorted.indexWhere((x => x >= startAt)))
 	  
-	  def inter(data: List[Int], upperBound: Double, accum: List[(Int, Double, Double)]): List[(Int, Double, Double)] = {
+	  def inter(data: List[Int], upperBound: Double, accum: List[(Int, Double, Double)])
+	  	: List[(Int, Double, Double)] = {
 		  val split = data.splitAt(data.indexWhere(x => x > upperBound))
 		  //println(split)
 		  
