@@ -12,13 +12,11 @@ object Frequency_lab_3_ws {
 	  		X match {
 	  			case Nil => cumRelFreqSeq.reverse
 	  			case x :: xs => {
-	  				val thisRelFreq = x / total
-	  				val newCumRelFreq = if(cumRelFreqSeq != Nil) {
-	  					val cumRelFreq = round(thisRelFreq + cumRelFreqSeq.head)
-	  					cumRelFreq
-	  				} else thisRelFreq
-	  				val newCumRelFreqSeq = newCumRelFreq :: cumRelFreqSeq
-	  				inter(xs, newCumRelFreqSeq)
+	  				val relFreq = x/total
+	  				val cumRelFreq = if(cumRelFreqSeq != Nil) {
+	  					round(relFreq + cumRelFreqSeq.head)
+	  				} else relFreq
+	  				inter(xs, cumRelFreq :: cumRelFreqSeq)
 	  			}
 	  		}
 	  	}
