@@ -37,10 +37,9 @@ object SequenceProgression_lab_2 {
   3 * pow(2, 5)                                   //> res4: Double = 96.0
   3 * pow(0.5, 5)                                 //> res5: Double = 0.09375
   
-  val squareProg = (n:I, interval:I, numRec:Int) => seqProg[I](n, {n => n * n}, numRec)
-                                                  //> squareProg  : (lab.functions.SequenceProgression_lab_2.I, lab.functions.Sequ
-                                                  //| enceProgression_lab_2.I, Int) => List[lab.functions.SequenceProgression_lab_
-                                                  //| 2.I] = <function3>
-  squareProg(3, 2, 5)                             //> res6: List[lab.functions.SequenceProgression_lab_2.I] = List(3, 9, 81, 6561,
+  val squareProg = (n:I, numRec:Int) => seqProg[I](n, {n => n * n}, numRec)
+                                                  //> squareProg  : (lab.functions.SequenceProgression_lab_2.I, Int) => List[lab.f
+                                                  //| unctions.SequenceProgression_lab_2.I] = <function2>
+  squareProg(3, 5)                                //> res6: List[lab.functions.SequenceProgression_lab_2.I] = List(3, 9, 81, 6561,
                                                   //|  43046721, -501334399)
 }

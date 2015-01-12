@@ -12,7 +12,7 @@ object Frequency_lab_3_ws {
 	  		X match {
 	  			case Nil => cumRelFreqSeq.reverse
 	  			case x :: xs => {
-	  				val relFreq = x/total
+	  				val relFreq = x/total // series of relative frequencies accumulate to 1
 	  				val cumRelFreq = if(cumRelFreqSeq != Nil) {
 	  					round(relFreq + cumRelFreqSeq.head)
 	  				} else relFreq
