@@ -1,6 +1,6 @@
 package lab.math.aleks.introstats
 
-object Frequency_lab_1 extends App {
+object Frequency_lab_1 {
   
   def groupByClassSize(data0: List[Int], startAt: Double, classSize: Int) {
 	  val sorted = data0.sorted
@@ -13,7 +13,7 @@ object Frequency_lab_1 extends App {
 		  
 		  val midpoint = upperBound - (classSize / 2d)
 		  
-		  // TODO: This is flawed! It's hacked and doesn't account for empty classes between populated classes.
+		  // TODO: This doesn't account for empty classes between populated classes.
 		  if(split._1 == Nil) {
 			  (split._2.length, midpoint, upperBound) :: accum
 		  }
@@ -30,10 +30,6 @@ object Frequency_lab_1 extends App {
 	  grouped.reverse.foreach { c =>
 	    println("frequency:" + c._1 + " midpoint:" + c._2 + " upperBound:" + c._3)
 	  }
-  }
-  
-  def groupByNumClasses(data: List[Int], numClasses: Int) {
-    
   }
 
 }
