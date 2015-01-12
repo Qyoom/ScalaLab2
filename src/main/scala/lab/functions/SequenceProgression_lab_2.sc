@@ -4,11 +4,11 @@ import math._
 object SequenceProgression_lab_2 {
 
   def seqProg[R](n: R, seqOp: R=>R, numberOfRecursions: Int): List[R] = {
-  		def inter(n: R, numRecur: Int, acc: List[R]): List[R] = {
-  			if (numRecur > 0) inter(seqOp(n), numRecur - 1, acc ++ List(seqOp(n)))
+  		def inter(numRecur: Int, acc: List[R]): List[R] = {
+  			if (numRecur > 0) inter(numRecur - 1, acc ++ List(seqOp(acc.last)))
 	  		else acc
   		}
-  		inter(n, numberOfRecursions, List[R](n))
+  		inter(numberOfRecursions, List[R](n))
   }                                               //> seqProg: [R](n: R, seqOp: R => R, numberOfRecursions: Int)List[R]
   // Arithmetic progression
 	// is a sequence with a common constant interval between terms.
@@ -36,4 +36,11 @@ object SequenceProgression_lab_2 {
   
   3 * pow(2, 5)                                   //> res4: Double = 96.0
   3 * pow(0.5, 5)                                 //> res5: Double = 0.09375
+  
+  val squareProg = (n:I, interval:I, numRec:Int) => seqProg[I](n, {n => n * n}, numRec)
+                                                  //> squareProg  : (lab.functions.SequenceProgression_lab_2.I, lab.functions.Sequ
+                                                  //| enceProgression_lab_2.I, Int) => List[lab.functions.SequenceProgression_lab_
+                                                  //| 2.I] = <function3>
+  squareProg(3, 2, 5)                             //> res6: List[lab.functions.SequenceProgression_lab_2.I] = List(3, 9, 81, 6561,
+                                                  //|  43046721, -501334399)
 }
