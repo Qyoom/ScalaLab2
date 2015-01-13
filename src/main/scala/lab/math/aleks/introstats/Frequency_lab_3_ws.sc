@@ -5,6 +5,7 @@ import lab.math.Rounding_lab_1._
 object Frequency_lab_3_ws {
 	val round = roundAt(3)_                   //> round  : Double => Double = <function1>
   
+  // Cumulative Relative Frequency
   def ogive(X: List[Double]): List[Double] = {
   		val total = X.sum
   		// Recursive

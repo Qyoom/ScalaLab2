@@ -57,4 +57,7 @@ object Bayes_lab_aids_test {
   bayesProb(sensi, speci, preva)                  //> numer: 9.97E-4
                                                   //| denom: 0.015982000000000014
                                                   //| res0: Double = 0.06238268051557998
+  bayesProb(.75, .52, .3)                         //> numer: 0.22499999999999998
+                                                  //| denom: 0.5609999999999999
+                                                  //| res1: Double = 0.40106951871657753
 }
