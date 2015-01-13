@@ -8,36 +8,45 @@ object karpathy_lab_1_ws {
 	 * and produce a single output value.
 	 */
 		
-	def forwardGate[T](op: (T,T)=>T)(x: T, y: T) = {
+	def forwardBinaryGate[T](op: (T,T)=>T)(x: T, y: T) = {
 		op(x,y)
-	}                                         //> forwardGate: [T](op: (T, T) => T)(x: T, y: T)T
+	}                                         //> forwardBinaryGate: [T](op: (T, T) => T)(x: T, y: T)T
+	
+	def forwardUnaryGate[T](op: T=>T)(x: T) = {
+		op(x)
+	}                                         //> forwardUnaryGate: [T](op: T => T)(x: T)T
+	
+	// ---------------------------------------------- //
 	
 	type T = Double
-	val forwardMultiplyGate = forwardGate[T]({(x,y) => x*y})_
+	val forwardMultiplyGate = forwardBinaryGate[T]({(x,y) => x*y})_
                                                   //> forwardMultiplyGate  : (neuralnetworks.karpathy.karpathy_lab_1_ws.T, neuraln
                                                   //| etworks.karpathy.karpathy_lab_1_ws.T) => neuralnetworks.karpathy.karpathy_la
                                                   //| b_1_ws.T = <function2>
-  val forwardAddGate = forwardGate[T]({(x,y) => x+y})_
+  val forwardAddGate = forwardBinaryGate[T]({(x,y) => x+y})_
                                                   //> forwardAddGate  : (neuralnetworks.karpathy.karpathy_lab_1_ws.T, neuralnetwor
                                                   //| ks.karpathy.karpathy_lab_1_ws.T) => neuralnetworks.karpathy.karpathy_lab_1_w
                                                   //| s.T = <function2>
-  val forwardDivideGate = forwardGate[T]({(x,y) => x/y})_
+  val forwardDivideGate = forwardBinaryGate[T]({(x,y) => x/y})_
                                                   //> forwardDivideGate  : (neuralnetworks.karpathy.karpathy_lab_1_ws.T, neuralnet
                                                   //| works.karpathy.karpathy_lab_1_ws.T) => neuralnetworks.karpathy.karpathy_lab_
                                                   //| 1_ws.T = <function2>
-  val forwardSubtractGate = forwardGate[T]({(x,y) => x-y})_
+  val forwardSubtractGate = forwardBinaryGate[T]({(x,y) => x-y})_
                                                   //> forwardSubtractGate  : (neuralnetworks.karpathy.karpathy_lab_1_ws.T, neuraln
                                                   //| etworks.karpathy.karpathy_lab_1_ws.T) => neuralnetworks.karpathy.karpathy_la
                                                   //| b_1_ws.T = <function2>
-  val forwardModuloGate = forwardGate[T]({(x,y) => x%y})_
+  val forwardModuloGate = forwardBinaryGate[T]({(x,y) => x%y})_
                                                   //> forwardModuloGate  : (neuralnetworks.karpathy.karpathy_lab_1_ws.T, neuralnet
                                                   //| works.karpathy.karpathy_lab_1_ws.T) => neuralnetworks.karpathy.karpathy_lab_
                                                   //| 1_ws.T = <function2>
   
-  val forwardMaxGate = forwardGate[T]({(x,y) => max(x,y)})_
+  val forwardMaxGate = forwardBinaryGate[T]({(x,y) => max(x,y)})_
                                                   //> forwardMaxGate  : (neuralnetworks.karpathy.karpathy_lab_1_ws.T, neuralnetwor
                                                   //| ks.karpathy.karpathy_lab_1_ws.T) => neuralnetworks.karpathy.karpathy_lab_1_w
                                                   //| s.T = <function2>
+  val forwardExpGate = forwardUnaryGate[T]({x => exp(x)})_
+                                                  //> forwardExpGate  : neuralnetworks.karpathy.karpathy_lab_1_ws.T => neuralnetwo
+                                                  //| rks.karpathy.karpathy_lab_1_ws.T = <function1>
   // Test
   forwardMultiplyGate(3,7)                        //> res0: neuralnetworks.karpathy.karpathy_lab_1_ws.T = 21.0
   forwardAddGate(3,7)                             //> res1: neuralnetworks.karpathy.karpathy_lab_1_ws.T = 10.0
@@ -45,13 +54,14 @@ object karpathy_lab_1_ws {
   forwardSubtractGate(3,7)                        //> res3: neuralnetworks.karpathy.karpathy_lab_1_ws.T = -4.0
   forwardModuloGate(3,7)                          //> res4: neuralnetworks.karpathy.karpathy_lab_1_ws.T = 3.0
   forwardMaxGate(3,7)                             //> res5: neuralnetworks.karpathy.karpathy_lab_1_ws.T = 7.0
+  forwardExpGate(3.7)                             //> res6: neuralnetworks.karpathy.karpathy_lab_1_ws.T = 40.4473043600674
   
   // ------------------------------------ //
   // http://karpathy.github.io/neuralnets/
   
   val x = -2d                                     //> x  : Double = -2.0
   val y = 3d                                      //> y  : Double = 3.0
-  forwardMultiplyGate(x,y)                        //> res6: neuralnetworks.karpathy.karpathy_lab_1_ws.T = -6.0
+  forwardMultiplyGate(x,y)                        //> res7: neuralnetworks.karpathy.karpathy_lab_1_ws.T = -6.0
   
   // ----- Recursive, immutable, curried version ------------------ //
   
@@ -85,9 +95,8 @@ object karpathy_lab_1_ws {
                                                   //|  neuralnetworks.karpathy.karpathy_lab_1_ws.T, neuralnetworks.karpathy.karpa
                                                   //| thy_lab_1_ws.T) = <function2>
 
-  search1(x,y)                                    //> res7: (neuralnetworks.karpathy.karpathy_lab_1_ws.T, neuralnetworks.karpathy
-                                                  //| .karpathy_lab_1_ws.T, neuralnetworks.karpathy.karpathy_lab_1_ws.T) = (-5.20
-                                                  //| 5376511585296,-1.7380863184961932,2.994889526596718)
-  
+  search1(x,y)                                    //> res8: (neuralnetworks.karpathy.karpathy_lab_1_ws.T, neuralnetworks.karpathy
+                                                  //| .karpathy_lab_1_ws.T, neuralnetworks.karpathy.karpathy_lab_1_ws.T) = (-4.99
+                                                  //| 1428549871554,-1.7614620135716674,2.833685036301506)
   
 }
