@@ -32,19 +32,30 @@ object KarpathyLab_1 {
 	  (x,y) => (step_size + x) * (step_size + y)
 	})_
   	
-  	def forwardCircuit(gate1: (T,T)=>T)(gate2: (T,T)=>T)(stepSize: Double)(x0:T, y0:T, z:T) = {
+	// gate1: add, gate2: multiply
+  	def forwardCircuit(gate1: (T,T)=>T)(gate2: (T,T)=>T)(stepSize: Double)(x:T, y:T, z:T) = {
 		// This is all a bunch of unsatisfying simplistic voodoo by the tut author
 		// but I'm going through the motions...!
 	  
-		val x1 = gate1(x0,y0)
-		val y1 = z
+		// add
+		val q = gate1(x,y) // 3.0
+		println("q:" + q) 
+	   
+		// multiply
+		val f = gate2(q, z)
+		println("f:" + f) // -12.0
 		
-		val x_gradient = y1
-		val y_gradient = x1
+		// gradient of the MULTIPLY gate with respect to its inputs
+		// wrt is short for "with respect to"
+		val derivative_f_wrt_z = q // 3
+		val derivative_f_wrt_q = z // -4
+
+		// derivative of the ADD gate with respect to its inputs
+		val derivative_q_wrt_x = 1.0
+		val derivative_q_wrt_y = 1.0
 		
-		val x2 = x1 + stepSize * x_gradient
-		val y2 = y1 + stepSize * y_gradient
-	  
-		gate2(x2, y2)
+		// chain rule
+		val derivative_f_wrt_x = derivative_q_wrt_x * derivative_f_wrt_q // -4
+		val derivative_f_wrt_y = derivative_q_wrt_y * derivative_f_wrt_q // -4
 	}
 }
