@@ -27,8 +27,8 @@ object KarpathyLab_1 {
 	val forwardModuloGate = forwardBinaryGate[T]({(x,y) => x%y})_
   	val forwardMaxGate = forwardBinaryGate[T]({(x,y) => max(x,y)})_
   	val forwardExpGate = forwardUnaryGate[T]({x => exp(x)})_
+  	
+  	def forwardCircuit[T](gate1: (T,T)=>T)(gate2: (T,T)=>T)(x:T, y:T, z:T) = {
+   		gate2(gate1(x,y), z)
+	}
 }
-/*
-
-
-*/

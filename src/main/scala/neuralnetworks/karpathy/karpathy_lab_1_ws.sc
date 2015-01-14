@@ -6,7 +6,7 @@ import scala.math._
 object karpathy_lab_1_ws {
 
 	type T = Double
-	
+ 
   // Test
   forwardMultiplyGate(3,7)                        //> res0: neuralnetworks.karpathy.KarpathyLab_1.T = 21.0
   forwardAddGate(3,7)                             //> res1: neuralnetworks.karpathy.KarpathyLab_1.T = 10.0
@@ -57,16 +57,16 @@ object karpathy_lab_1_ws {
                                                   //| thy_lab_1_ws.T) = <function2>
 
   search1(x,y)                                    //> res8: (neuralnetworks.karpathy.karpathy_lab_1_ws.T, neuralnetworks.karpathy
-                                                  //| .karpathy_lab_1_ws.T, neuralnetworks.karpathy.karpathy_lab_1_ws.T) = (-5.04
-                                                  //| 631252205018,-1.7266106715768021,2.92266960069331)
+                                                  //| .karpathy_lab_1_ws.T, neuralnetworks.karpathy.karpathy_lab_1_ws.T) = (-5.12
+                                                  //| 540017132776,-1.7799767525886911,2.8794759054429706)
   val search2 = randomLocalSearch(forwardMaxGate)(0.01)(100)_
                                                   //> search2  : (neuralnetworks.karpathy.karpathy_lab_1_ws.T, neuralnetworks.kar
                                                   //| pathy.karpathy_lab_1_ws.T) => (neuralnetworks.karpathy.karpathy_lab_1_ws.T,
                                                   //|  neuralnetworks.karpathy.karpathy_lab_1_ws.T, neuralnetworks.karpathy.karpa
                                                   //| thy_lab_1_ws.T) = <function2>
   search2(x,y)                                    //> res9: (neuralnetworks.karpathy.karpathy_lab_1_ws.T, neuralnetworks.karpathy
-                                                  //| .karpathy_lab_1_ws.T, neuralnetworks.karpathy.karpathy_lab_1_ws.T) = (3.220
-                                                  //| 668343780728,-1.9573991682986978,3.220668343780728)
+                                                  //| .karpathy_lab_1_ws.T, neuralnetworks.karpathy.karpathy_lab_1_ws.T) = (3.273
+                                                  //| 6083023193823,-1.9420780751722968,3.2736083023193823)
   
   /* // http://karpathy.github.io/neuralnets/
    * "So, we're done, right? Not quite: This is a perfectly fine strategy for tiny problems
