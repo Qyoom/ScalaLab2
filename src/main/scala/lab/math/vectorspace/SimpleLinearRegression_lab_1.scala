@@ -18,7 +18,7 @@ object SimpleLinearRegression_lab_1 {
 		val y_diffs = Y - y_mean
 		val slope = (x_diffs :* y_diffs).sum / pow(x_diffs, 2).sum
 		val intercept = y_mean - slope * x_mean
-		println("slope:" + slope + " intercept:" + intercept)
+		//println("slope:" + slope + " intercept:" + intercept)
 		(slope, intercept)
 	}
 	
