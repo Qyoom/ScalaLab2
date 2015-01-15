@@ -30,9 +30,9 @@ object SimpleLinearRegression_lab_2 {
                                                   //| 3554185)
   // Compare via sum of squared residuals
   // Also prints lots of statistical diagnostics
-  val SSE = sumSquaredResiduals(Y, predictions)   //> Jan 08, 2015 7:56:17 PM com.github.fommil.jni.JniLoader liberalLoad
+  val SSE = sumSquaredResiduals(Y, predictions)   //> Jan 14, 2015 4:53:49 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/j
-                                                  //| niloader1149557262951868974netlib-native_system-osx-x86_64.jnilib
+                                                  //| niloader4055983863040035033netlib-native_system-osx-x86_64.jnilib
                                                   //| mean of redisuals: -1.1368683772161604E-14
                                                   //| SST: 5766.347999999996
                                                   //| SSR: 5396.447973505608

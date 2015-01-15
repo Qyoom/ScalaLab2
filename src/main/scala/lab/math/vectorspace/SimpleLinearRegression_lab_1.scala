@@ -7,6 +7,7 @@ import breeze.stats.mean
 object SimpleLinearRegression_lab_1 {
 
   	// ------ Simple Linear Regression Model------ //
+	// Referencing www.Aleks.com "Simple linear regression" for statistical formulas
 	
 	// Derive model from observations
 	// Returns slope and intercept

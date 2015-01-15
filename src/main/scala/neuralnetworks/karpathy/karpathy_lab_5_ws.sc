@@ -14,7 +14,7 @@ object karpathy_lab_5_ws {
 		
 		// gradient of the MULTIPLY gate with respect to its inputs
 		val derivative_f_wrt_q = z // -4
-
+ 
 		// derivative of the ADD gate with respect to its inputs
 		val derivative_q_wrt_x = 1.0
 		val derivative_q_wrt_y = 1.0
