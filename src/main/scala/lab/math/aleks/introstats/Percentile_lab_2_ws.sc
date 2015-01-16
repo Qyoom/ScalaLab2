@@ -4,37 +4,32 @@ import scala.math._
 
 object Percentile_lab_2_ws {
 
-	def whiskerValues(X0: List[Double]): (Double, Double, Double) = {
+	def whiskerValues(X0: List[Double]): (Double, Double, Double, Double, Double) = {
 		val X = X0.sorted
-		val min_ = X(1)
+		val min_ = X(0)
 		val max_ = X(X.length - 1)
 		val median_ = medianByHand(X)
 		
-		(min_, max_, median_)
-	}                                         //> whiskerValues: (X0: List[Double])(Double, Double, Double)
-	
-	def percentileByHand(X0: List[Double]) = {
-	
-	}                                         //> percentileByHand: (X0: List[Double])Unit
+		val Q1 = medianByHand(X.take(X.length/2))
+		println("Q1: " + Q1)
+		
+		val Q3 = medianByHand(X.drop(X.length/2))
+		println("Q3: " + Q3)
+		
+		(min_, Q1, median_, Q3, max_)
+	}                                         //> whiskerValues: (X0: List[Double])(Double, Double, Double, Double, Double)
 	
 	def medianByHand(X: List[Double]): Double = {
 		val X_sorted = X.sorted
 		println(X_sorted)
 		if(X_sorted.length % 2 == 0) {
-			//println("length even")
 			val under = X_sorted((X.length/2) - 1)
 			val over = X_sorted(X.length/2)
 			(under + over) / 2d
 		}
 		else {
-			//println("length odd, div by 2: " + X.length/2)
-			val half_length = X_sorted.length/2d
-			val floor_ = floor(half_length)
-			
-			//println("length odd, div by 2: " + X_sorted.length/2)
-			//println("floor_: " + floor_)
-			
-			X_sorted(floor_.toInt)
+			val middle_ = X_sorted.length/2
+			X_sorted(middle_.toInt)
 		}
 	}                                         //> medianByHand: (X: List[Double])Double
 	
@@ -43,41 +38,25 @@ object Percentile_lab_2_ws {
 	val dollars = List(11d, 15, 15, 27, 28, 31, 32, 39, 40, 42, 50, 50)
                                                   //> dollars  : List[Double] = List(11.0, 15.0, 15.0, 27.0, 28.0, 31.0, 32.0, 39.
                                                   //| 0, 40.0, 42.0, 50.0, 50.0)
+	val grades = List(90d,91,83,71,73,55,87,84,66,95,76,71,70,86,75,94)
+                                                  //> grades  : List[Double] = List(90.0, 91.0, 83.0, 71.0, 73.0, 55.0, 87.0, 84.0
+                                                  //| , 66.0, 95.0, 76.0, 71.0, 70.0, 86.0, 75.0, 94.0)
   
-  //val test_odd = List(-1d,2,3,4,5,6,70)
-  /*val test_odd_2 = List(-1d,2,3,4,5,6,7,8,9,10,110)
-  val test_even = List(-1d,2,3,4,5,60)
-  val test_even_2 = List(-1d,2,3,4,5,6,7,8,9,100)
-  
-  val test1 = List(4d, -1, 6, 3, 6)
-  */
+
   
   // ------ Tests ----------------------------- //
   
-	dollars.length                            //> res0: Int = 12
-	//medianByHand(dollars)
-  whiskerValues(dollars)                          //> List(11.0, 15.0, 15.0, 27.0, 28.0, 31.0, 32.0, 39.0, 40.0, 42.0, 50.0, 50.0
-                                                  //| )
-                                                  //| res1: (Double, Double, Double) = (15.0,50.0,31.5)
-  
-	/*
-	test_odd.length
-	test_odd.length/2
-	test_odd(test_odd.length/2)
-	test_odd_2(test_odd_2.length/2)
-	
-	test_even.length
-	test_even((test_even.length/2) - 1)
-	test_even(test_even.length/2)
-	test_even_2((test_even_2.length/2) - 1)
-	test_even_2(test_even_2.length/2)
-	medianByHand(test_odd)
-	medianByHand(test_odd_2)
-	medianByHand(test_even)
-	medianByHand(test_even_2)
-	
-	medianByHand(test1)
-  */
+  //dollars.length
+  //whiskerValues(dollars)
+  grades.length                                   //> res0: Int = 16
+  whiskerValues(grades)                           //> List(55.0, 66.0, 70.0, 71.0, 71.0, 73.0, 75.0, 76.0, 83.0, 84.0, 86.0, 87.0
+                                                  //| , 90.0, 91.0, 94.0, 95.0)
+                                                  //| List(55.0, 66.0, 70.0, 71.0, 71.0, 73.0, 75.0, 76.0)
+                                                  //| Q1: 71.0
+                                                  //| List(83.0, 84.0, 86.0, 87.0, 90.0, 91.0, 94.0, 95.0)
+                                                  //| Q3: 88.5
+                                                  //| res1: (Double, Double, Double, Double, Double) = (55.0,71.0,79.5,88.5,95.0)
+                                                  //| 
 }
 /*
 
