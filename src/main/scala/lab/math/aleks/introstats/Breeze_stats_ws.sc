@@ -34,6 +34,8 @@ object Breeze_stats_ws {
   max(v1)                                         //> res10: Double = 40.0
   max(sorted_array)                               //> res11: Double = 40.0
   
+  // This does not appear to be accurate.
+  // See my "hand made" version in Percentile_lab_2_ws
   def percentileBreeze(X: DenseVector[Double]) = {
   		val X_arr = X.toArray
   		val min_ = min(X)
