@@ -21,4 +21,5 @@ object Frequency_ogive_test_1_ws {
                                                   //| 0.724 midpoint:10.5 upperBound:11.5
                                                   //| frequency:5 relative freq:0.278 cumulative freq:18 cumulative relative freq:
                                                   //| 1.002 midpoint:12.5 upperBound:13.5
+  
 }
