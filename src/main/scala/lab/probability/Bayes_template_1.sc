@@ -5,7 +5,7 @@ object Bayes_template_1 {
 	// pA = P(A)
 	// pB = P(B)
 	// pAcomp = P(!A)
-	// pBconv = P(!B)
+	// pBcomp = P(!B)
 	// pAgivB = P(A|B)
 	// pBgivA = P(B|A)
 	// pAgivBcomp = P(A|!B)

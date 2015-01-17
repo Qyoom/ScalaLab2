@@ -28,9 +28,9 @@ object SimpleLinearRegression_lab_2_ws {
                                                   //> deriveModel2: (X: breeze.linalg.DenseVector[Double], Y: breeze.linalg.DenseV
                                                   //| ector[Double])(Double, Double)
 	val model2, (slope2, intercept2) = deriveModel2(Temp, Sales)
-                                                  //> Jan 15, 2015 1:04:36 PM com.github.fommil.jni.JniLoader liberalLoad
+                                                  //> Jan 17, 2015 2:46:11 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/j
-                                                  //| niloader7344893011293039195netlib-native_system-osx-x86_64.jnilib
+                                                  //| niloader4108930571013689498netlib-native_system-osx-x86_64.jnilib
                                                   //| model2  : (Double, Double) = (30.087861794245182,-159.47415234086208)
                                                   //| slope2  : Double = 30.087861794245182
                                                   //| intercept2  : Double = -159.47415234086208
