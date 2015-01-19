@@ -20,10 +20,7 @@ object Discrete_probability_dist_1_ws {
                                                   //| ction2>
 	// --------------------------- //
 	
-	solve(DenseVector(0.30,0.30,0.22), 2)     //> res0: (Double, Double) = (0.09,0.09)
-	solve(DenseVector(0.27,0.26,0.23), 2)     //> res1: (Double, Double) = (0.12,0.12)
-	solve(DenseVector(0.28, 0.18, 0.14), 2)   //> res2: (Double, Double) = (0.2,0.2)
-	solve(DenseVector(0.18, 0.15, 0.26), 2)   //> res3: (Double, Double) = (0.21,0.2)
+	solve(DenseVector(0.12, 0.29, 0.13), 2)   //> res0: (Double, Double) = (0.23,0.23)
 }
 /*
 

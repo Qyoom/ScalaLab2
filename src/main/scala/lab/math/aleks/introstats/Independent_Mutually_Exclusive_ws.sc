@@ -17,7 +17,7 @@ object Independent_Mutually_Exclusive_ws {
 	
 	// ----------------------------------- //
 	
-	val pB = 0.24                             //> pB  : Double = 0.24
-	val pC = 0.64                             //> pC  : Double = 0.64
-	union(pB, pC)                             //> res0: (Double, Double) = (0.7264,0.88)
+	val pB = 0.67                             //> pB  : Double = 0.67
+	val pC = 0.26                             //> pC  : Double = 0.26
+	union(pB, pC)                             //> res0: (Double, Double) = (0.7558,0.93)
 }

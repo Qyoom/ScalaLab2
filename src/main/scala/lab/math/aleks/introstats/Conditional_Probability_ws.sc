@@ -12,9 +12,5 @@ object Conditional_Probability_ws {
   
   // ---------------------------- //
   
-  // A = visit therapist = 0.27
-  // B = use antidepressants = 0.45
-  // (a) = P(B|A)
-  // (b) = P(A|B)
-  condProb(0.27, 0.45, 0.21)                      //> res0: ((String, Double), (String, Double)) = ((P(B|A),0.78),(P(A|B),0.47))
+  condProb(0.91, 0.07, 0.06)                      //> res0: ((String, Double), (String, Double)) = ((P(B|A),0.07),(P(A|B),0.86))
 }

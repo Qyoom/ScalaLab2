@@ -34,17 +34,19 @@ object Percentile_lab_2_ws {
   //val hours = List(66d, 44, 56, 61, 42, 54, 41, 35, 62, 53, 57, 69, 42, 52, 52, 65, 41)
   //val channels = List(21d,18,7,25,21,26,20,40,34,6,16,5,10,9,11,16,8,35)
   //val temps = List(58d,56,80,70,64,67,59,50,70,67,51,53,54,57,71,74,55,60,64)
-  val ages = List(29d,29,47,44,49,24,45,27,26,43,54,39,39,26,37,55,46,23,41)
-                                                  //> ages  : List[Double] = List(29.0, 29.0, 47.0, 44.0, 49.0, 24.0, 45.0, 27.0,
-                                                  //|  26.0, 43.0, 54.0, 39.0, 39.0, 26.0, 37.0, 55.0, 46.0, 23.0, 41.0)
+  //val ages = List(29d,29,47,44,49,24,45,27,26,43,54,39,39,26,37,55,46,23,41)
+  val waitTimes = List(7d,17,30,8,13,25,19,5,31,19,29,23,6,11,22,24)
+                                                  //> waitTimes  : List[Double] = List(7.0, 17.0, 30.0, 8.0, 13.0, 25.0, 19.0, 5.
+                                                  //| 0, 31.0, 19.0, 29.0, 23.0, 6.0, 11.0, 22.0, 24.0)
   
 
   
   // ------ Tests ----------------------------- //
   
-  ages.length                                     //> res0: Int = 19
-  whiskerValues(ages)                             //> res1: (Double, Double, Double, Double, Double) = (23.0,27.0,39.0,45.5,55.0)
-                                                  //| 
+  waitTimes.length                                //> res0: Int = 16
+  whiskerValues(waitTimes)                        //> res1: (Double, Double, Double, Double, Double) = (5.0,9.5,19.0,24.5,31.0)
+  //ages.length
+  //whiskerValues(ages)
   //temps.length
   //whiskerValues(temps)
   //dollars.length
