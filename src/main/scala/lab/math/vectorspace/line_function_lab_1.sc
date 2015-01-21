@@ -30,8 +30,6 @@ object line_function_lab_1 {
   f1(-3)                                          //> res2: Double = -6.0
   f1(5)                                           //> res3: Double = 4.0
   
-  val f2 = line(5,-5)(1,1)                        //> slope:-1.5 intercept:2.5
+  val f2 = line(-6,-2)(-3,-6)                     //> slope:-1.3333333333333333 intercept:-10.0
                                                   //| f2  : lab.math.vectorspace.line_function_lab_1.T => Double = <function1>
-  val f3 = line(-4,-2)(6,-6)                      //> slope:-0.4 intercept:-3.6
-                                                  //| f3  : lab.math.vectorspace.line_function_lab_1.T => Double = <function1>
 }
