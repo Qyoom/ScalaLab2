@@ -3,6 +3,10 @@ package lab.calculus.derivatives
 import math._
 
 object Derivatives_lab_1 {
+	/* I don't know what my source was for this, but it matches exactly
+	 * what I'm seeing in Schaum's Differential and Integral Calculus.
+	 */
+
 	val x1 = -5 //3                           //> x1  : Int = -5
 	val x2 = 12 //7                           //> x2  : Int = 12
 	// the expected derivative
