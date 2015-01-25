@@ -43,17 +43,17 @@ object DerivativesLab2 {
 		}
         
         // Returns slope with reduced delta
-        def deriveSlope(x1: Double, x2: Double): Double = {
+        def inter(x1: Double, x2: Double): Double = {
             val newX2 = moveCloser(x1, x2)
             val dx = delta(x1, newX2)
             val slope = (f(x1 + dx) - f(x1)) / dx
             println("derivative step: " + slope)
-            if(abs(dx) > deltaThreshold) deriveSlope(x1, newX2) // inner recursion
+            if(abs(dx) > deltaThreshold) inter(x1, newX2) // inner recursion
             else slope
         }
         
         // Kick off deriveSlope
-        if(abs(dx) > deltaThreshold) deriveSlope(x1, x2)
+        if(abs(dx) > deltaThreshold) inter(x1, x2)
         else slope
     } // end outer deriveSlope
 }
