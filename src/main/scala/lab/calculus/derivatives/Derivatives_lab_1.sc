@@ -24,7 +24,7 @@ object Derivatives_lab_1 {
 	//f(x1)
 	//f(x1 + dx)
 	//2 * x1 + dx
-	
+ 
 	// Slope formula
 	def sf = (f(x1 + dx) - f(x1)) / dx        //> sf: => Double
 	

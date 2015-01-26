@@ -46,7 +46,7 @@ object EuclideanLabBreeze2 extends App {
 	println("res4c: " + eucNorm(DenseVector(1,-2,2)))
 	
 	// Breeze, built in norm
-	println("norm(A): " + norm(A))
+	println("norm(A): " + norm(A)) // identical to eucNorm here
 	println("norm(C): " + norm(C))
 	
 	///// Minkowski norm /////////////////////////////////////////////

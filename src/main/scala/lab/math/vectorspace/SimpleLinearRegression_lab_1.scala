@@ -8,6 +8,7 @@ object SimpleLinearRegression_lab_1 {
 
   	// ------ Simple Linear Regression Model------ //
 	// Referencing www.Aleks.com "Simple linear regression" for statistical formulas
+	// This is also the equation model that Haistie/Tibshirani present.
 	
 	// Derive model from observations
 	// Returns slope and intercept
