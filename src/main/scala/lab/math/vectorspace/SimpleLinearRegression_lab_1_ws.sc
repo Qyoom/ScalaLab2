@@ -27,6 +27,12 @@ object SimpleLinearRegression_lab_1_ws {
   // Standard Deviation
   val stdDev = sqrt(variance)                     //> stdDev  : Double = 2.4366253009321843
   
+  // Convertion to the standard normal distribution (per Aleks)
+  val z = (Y - mean(Y)) / stdDev                  //> z  : breeze.linalg.DenseVector[Double] = DenseVector(-1.641614735950461, -0.
+                                                  //| 28728257879133073, -0.8208073679752306, 0.04104036839876138, 0.9849688415702
+                                                  //| 763, 0.1231211051962845, 1.600574367551699)
+  
+  // --------------------------------------------------------------------------- //
   // Referencing www.Aleks.com "Simple linear regression" for statistical formulas
   
   // ------ Model, prediction --------------- //
@@ -45,9 +51,9 @@ object SimpleLinearRegression_lab_1_ws {
   // Prediction output
  
   // ----- Output measures -------- //
-  diagnosticLog(Y, predictions)                   //> Jan 26, 2015 1:51:29 PM com.github.fommil.jni.JniLoader liberalLoad
+  diagnosticLog(Y, predictions)                   //> Jan 26, 2015 1:57:20 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/
-                                                  //| jniloader7864784927690202449netlib-native_system-osx-x86_64.jnilib
+                                                  //| jniloader7103464479386635914netlib-native_system-osx-x86_64.jnilib
                                                   //| SSE: 12.124999999999998
                                                   //| mean of redisuals: -9.516197353929913E-16
                                                   //| SST: 41.559999999999995
