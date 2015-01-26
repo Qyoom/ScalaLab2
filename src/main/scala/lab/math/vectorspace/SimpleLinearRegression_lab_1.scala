@@ -30,26 +30,31 @@ object SimpleLinearRegression_lab_1 {
 		y
 	}
   
-  // ------ Squared error ---------------------- //
+	// ------ Squared error ---------------------- //
+
+	def sumSquaredResiduals(Y_obs: DenseVector[Double], Y_est: DenseVector[Double]): Double = {
+		// Sum of the squared errors (residuals, or difference between observed and predicted)
+  		val SSE = pow(Y_obs - Y_est, 2).sum
+  		SSE
+	}
   
-  /* Least Squares: The "best-fitting" line can be defined as the one which
-   * minimizes the sum of the squared residuals (errors) between observed output and
-   * estimated output (dependent variables).
-   */
-  // Diagnostic
- 	def sumSquaredResiduals(Y_obs: DenseVector[Double], Y_est: DenseVector[Double]): Double = {
+	/* Least Squares: The "best-fitting" line can be defined as the one which
+	 * minimizes the sum of the squared residuals (errors) between observed output and
+	 * estimated output (dependent variables).
+	 */
+ 	def diagnosticLog(Y_obs: DenseVector[Double], Y_est: DenseVector[Double]) {
   		require(Y_obs.length == Y_est.length)
   		val Y_mean = mean(Y_obs)
   		// Sum of the squared errors (residuals, or difference between observed and predicted)
-  		val SSE = pow(Y_obs - Y_est, 2).sum
+  		val SSE = sumSquaredResiduals(Y_obs, Y_est)
   		// Regression sum of squares
   		val SSR = pow(Y_est - Y_mean, 2).sum
   		// Total sum of Squares, spread of Y values about their mean
   		val SST = pow(Y_obs - Y_mean, 2).sum
   		// Gives the proportion of the total variation in the y values that is accounted for by the estimated linear relationship between x and y. Numerically equal to the square of the sample correlation coefficient r.
   		val r_squared = SSR/SST
-  		println("mean of redisuals: " + mean((Y_obs - Y_est)) + "\nSST: " + SST + "\nSSR: " + SSR + "\nSST - (SSE + SSR): " + (SST - (SSE + SSR)) + "\nSSR/SST (r^2): " + r_squared)
-  		SSE // return
-	}
+  		println("SSE: " + SSE + "\nmean of redisuals: " + mean((Y_obs - Y_est)) + "\nSST: " + SST + "\nSSR: " + SSR + "\nSST - (SSE + SSR): " + (SST - (SSE + SSR)) + "\nSSR/SST (r^2): " + r_squared)
+  		// TODO: Calculate Std Err of intercept per Hastie & Tibshirani slide Ch 2.
+ 	}
 
 }
