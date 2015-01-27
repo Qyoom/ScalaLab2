@@ -51,9 +51,9 @@ object SimpleLinearRegression_lab_1_ws {
   // Prediction output
  
   // ----- Output measures -------- //
-  diagnosticLog(Y, predictions)                   //> Jan 26, 2015 1:57:20 PM com.github.fommil.jni.JniLoader liberalLoad
+  diagnosticLog(Y, predictions)                   //> Jan 26, 2015 8:04:08 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/
-                                                  //| jniloader7103464479386635914netlib-native_system-osx-x86_64.jnilib
+                                                  //| jniloader8468530770509570314netlib-native_system-osx-x86_64.jnilib
                                                   //| SSE: 12.124999999999998
                                                   //| mean of redisuals: -9.516197353929913E-16
                                                   //| SST: 41.559999999999995
@@ -69,11 +69,12 @@ object SimpleLinearRegression_lab_1_ws {
   // Standard error of the estimated slope
 	val SEb1 = s / pow(X - mean(X), 2).sum    //> SEb1  : Double = 0.05675077078133176
 	// Using this statistic, it is possible to do a test of the null hypothesis that the population slope equals zero, that is, that there is no linear relationship between the variables x and y.
-	slope / SEb1                              //> res2: Double = 18.250224119510733
+	// See StatLearning (Hastie, Tibshirani) also
+	val t = slope / SEb1                      //> t  : Double = 18.250224119510733
 	val SSR = pow(predictions - mean(Y), 2).sum
                                                   //> SSR  : Double = 29.43500000000001
   // With this statistic it is also possible to do a test of the null hypothesis, i.e. that there is no linear relationship between the variables x and y
-	(SSR/1)/MSE                               //> res3: Double = 12.138144329896912
+	(SSR/1)/MSE                               //> res2: Double = 12.138144329896912
 }
 /*
 
