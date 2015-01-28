@@ -1,4 +1,4 @@
-package scratchpad_NO_GIT
+package courses.johnshopkins.inference
 
 //import math._
 import lab.math.Rounding_lab_1._
@@ -37,9 +37,9 @@ object scratchpad_2 {
   val X = DenseVector(1.0,  2.0,  3.0,  4.0)      //> X  : breeze.linalg.DenseVector[Double] = DenseVector(1.0, 2.0, 3.0, 4.0)
   val Prob = DenseVector(0.1,  0.2,  0.3,  0.4)   //> Prob  : breeze.linalg.DenseVector[Double] = DenseVector(0.1, 0.2, 0.3, 0.4)
   (X :* Prob).sum                                 //> res1: Double = 3.0
-  X dot Prob                                      //> Jan 14, 2015 3:30:13 PM com.github.fommil.jni.JniLoader liberalLoad
-                                                  //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/j
-                                                  //| niloader5094357987588168779netlib-native_system-osx-x86_64.jnilib
+  X dot Prob                                      //> Jan 27, 2015 8:51:44 AM com.github.fommil.jni.JniLoader liberalLoad
+                                                  //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/
+                                                  //| jniloader2263660906091817153netlib-native_system-osx-x86_64.jnilib
                                                   //| res2: Double = 3.0
   
   // ----- Variance and Standard Deviation ------------- //

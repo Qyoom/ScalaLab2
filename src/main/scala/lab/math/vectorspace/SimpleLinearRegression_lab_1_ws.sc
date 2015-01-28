@@ -51,9 +51,9 @@ object SimpleLinearRegression_lab_1_ws {
   // Prediction output
  
   // ----- Output measures -------- //
-  diagnosticLog(Y, predictions)                   //> Jan 26, 2015 8:04:08 PM com.github.fommil.jni.JniLoader liberalLoad
+  diagnosticLog(Y, predictions)                   //> Jan 27, 2015 3:35:53 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/
-                                                  //| jniloader8468530770509570314netlib-native_system-osx-x86_64.jnilib
+                                                  //| jniloader5217998143990544263netlib-native_system-osx-x86_64.jnilib
                                                   //| SSE: 12.124999999999998
                                                   //| mean of redisuals: -9.516197353929913E-16
                                                   //| SST: 41.559999999999995

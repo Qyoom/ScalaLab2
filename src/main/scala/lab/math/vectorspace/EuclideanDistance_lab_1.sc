@@ -2,7 +2,7 @@ package lab.math.vectorspace
 
 import lab.math.vectorspace.EuclideanLabBreeze2._
 import breeze.linalg._
-import breeze.numerics._
+//import breeze.numerics._
 
 object EuclideanDistance_lab_1 {
   val A = List(3.0, 4.1, 4.8, 6.0)                //> A  : List[Double] = List(3.0, 4.1, 4.8, 6.0)
@@ -23,9 +23,9 @@ object EuclideanDistance_lab_1 {
 	val Av = DenseVector(3.0, 4.1, 4.8, 6.0)  //> Av  : breeze.linalg.DenseVector[Double] = DenseVector(3.0, 4.1, 4.8, 6.0)
 	val Bv = DenseVector(3.6, 5.0, 6.3, 7.9)  //> Bv  : breeze.linalg.DenseVector[Double] = DenseVector(3.6, 5.0, 6.3, 7.9)
 	
-	eucDist(X1, zeros)                        //> Jan 05, 2015 9:22:21 PM com.github.fommil.jni.JniLoader liberalLoad
+	eucDist(X1, zeros)                        //> Jan 27, 2015 8:56:11 AM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/j
-                                                  //| niloader1312890056604644153netlib-native_system-osx-x86_64.jnilib
+                                                  //| niloader4189798574637742467netlib-native_system-osx-x86_64.jnilib
                                                   //| res2: Double = 2.449489742783178
 	eucDist(X2, zeros)                        //> res3: Double = 3.4641016151377544
 	eucDist(X3, zeros)                        //> res4: Double = 3.872983346207417
