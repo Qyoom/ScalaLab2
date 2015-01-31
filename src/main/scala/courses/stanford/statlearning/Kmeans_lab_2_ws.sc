@@ -49,9 +49,9 @@ object Kmeans_lab_2_ws {
 	val dists = for(obs <- obss) yield {
 		val distance = eucDist(obs._2, testPoint)
     (distance, obs)
-	}                                         //> Jan 27, 2015 8:24:46 PM com.github.fommil.jni.JniLoader liberalLoad
+	}                                         //> Jan 29, 2015 6:21:21 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/
-                                                  //| jniloader1547412112455790492netlib-native_system-osx-x86_64.jnilib
+                                                  //| jniloader3563389371637157245netlib-native_system-osx-x86_64.jnilib
                                                   //| dists  : List[(Double, (courses.stanford.statlearning.Kmeans_lab_2_ws.Color
                                                   //| .Value, breeze.linalg.DenseVector[Double]))] = List((3.0,(Red,DenseVector(0
                                                   //| .0, 3.0, 0.0))), (2.0,(Red,DenseVector(2.0, 0.0, 0.0))), (3.162277660168379

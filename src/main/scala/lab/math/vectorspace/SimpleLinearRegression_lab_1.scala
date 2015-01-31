@@ -9,6 +9,11 @@ object SimpleLinearRegression_lab_1 {
   	// ------ Simple Linear Regression Model------ //
 	// Referencing www.Aleks.com "Simple linear regression" for statistical formulas
 	// This is also the equation model that Haistie/Tibshirani present.
+  
+	/* Least Squares: The "best-fitting" line can be defined as the one which
+	 * minimizes the sum of the squared residuals (errors) between observed output and
+	 * estimated output (dependent variables).
+	 */
 	
 	// Derive model from observations
 	// Returns slope and intercept
@@ -30,18 +35,14 @@ object SimpleLinearRegression_lab_1 {
 		y
 	}
   
-	// ------ Squared error ---------------------- //
-
+	// This provides the estimate for the standard deviation referred to by Inro to Statistical Learning 
+	// (James, Witten, Hastie and Tibshirani), p.65
 	def sumSquaredResiduals(Y_obs: DenseVector[Double], Y_est: DenseVector[Double]): Double = {
 		// Sum of the squared errors (residuals, or difference between observed and predicted)
   		val SSE = pow(Y_obs - Y_est, 2).sum
   		SSE
 	}
   
-	/* Least Squares: The "best-fitting" line can be defined as the one which
-	 * minimizes the sum of the squared residuals (errors) between observed output and
-	 * estimated output (dependent variables).
-	 */
  	def diagnosticLog(Y_obs: DenseVector[Double], Y_est: DenseVector[Double]) {
   		require(Y_obs.length == Y_est.length)
   		val Y_mean = mean(Y_obs)
@@ -53,8 +54,8 @@ object SimpleLinearRegression_lab_1 {
   		val SST = pow(Y_obs - Y_mean, 2).sum
   		// Gives the proportion of the total variation in the y values that is accounted for by the estimated linear relationship between x and y. Numerically equal to the square of the sample correlation coefficient r.
   		val r_squared = SSR/SST
-  		println("SSE: " + SSE + "\nmean of redisuals: " + mean((Y_obs - Y_est)) + "\nSST: " + SST + "\nSSR: " + SSR + "\nSST - (SSE + SSR): " + (SST - (SSE + SSR)) + "\nSSR/SST (r^2): " + r_squared)
-  		// TODO: Calculate Std Err of intercept per Hastie & Tibshirani slide Ch 2.
+  		val alt_r_squared = 1 - r_squared
+  		println("SSE: " + SSE + "\nmean of redisuals: " + mean((Y_obs - Y_est)) + "\nSST: " + SST + "\nSSR: " + SSR + "\nSST - (SSE + SSR): " + (SST - (SSE + SSR)) + "\nSSR/SST (r^2): " + r_squared + "\n1 - SSR/SST: " + alt_r_squared)
  	}
 
 }
