@@ -30,7 +30,7 @@ object EuclideanLabBreeze2 extends App {
 
 	///// Computes Euclidean norm (i.e. Euclidean length) ////////////////////////////////////
 	def eucNorm(X: DenseVector[Double]): Double = {
-		// square root of the sum of the squared elements
+		// square root of the sum of the squared elements. Pathagorean theorem.
 		sqrt(pow(X, 2).sum)
 	}
 	
@@ -69,4 +69,5 @@ object EuclideanLabBreeze2 extends App {
 	println("res11: " + minkNorm(C, 3))
 	println("res11.5: " + minkNorm(C, 100))
 	println("res12: " + minkNorm(B, 3))
+	
 }
