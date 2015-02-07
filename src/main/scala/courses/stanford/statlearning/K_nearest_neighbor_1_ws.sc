@@ -4,7 +4,7 @@ import breeze.linalg._
 import breeze.numerics._
 import lab.math.vectorspace.EuclideanLabBreeze2._
 
-object Kmeans_lab_1_ws {
+object K_nearest_neighbor_1_ws {
 	// An Introduction to Statistical Learning ORIG.pdf p.53
 
 	val X1 = DenseVector(0d,2,0,0,-1,1)       //> X1  : breeze.linalg.DenseVector[Double] = DenseVector(0.0, 2.0, 0.0, 0.0, -1
@@ -54,9 +54,9 @@ object Kmeans_lab_1_ws {
                                                   //| 683795, 2.23606797749979, 1.4142135623730951, 1.7320508075688772)
 	// euclidean distance
   for(v <- X_mat_A(*,::)) yield eucDist(v, testPoint)
-                                                  //> Jan 27, 2015 1:41:18 PM com.github.fommil.jni.JniLoader liberalLoad
+                                                  //> Feb 07, 2015 1:23:50 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/j
-                                                  //| niloader3729037665003969871netlib-native_system-osx-x86_64.jnilib
+                                                  //| niloader1281677575783985213netlib-native_system-osx-x86_64.jnilib
                                                   //| res6: breeze.linalg.DenseVector[Double] = DenseVector(3.0, 2.0, 3.1622776601
                                                   //| 683795, 2.23606797749979, 1.4142135623730951, 1.7320508075688772)
 	

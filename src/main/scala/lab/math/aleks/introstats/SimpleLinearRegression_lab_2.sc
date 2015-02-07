@@ -17,9 +17,7 @@ object SimpleLinearRegression_lab_2 {
   
   // Derive the model from observations
   val model, (slope, intercept) = deriveModel(X, Y)
-                                                  //> slope:1.1076266724381105 intercept:-26.031359356968892
-                                                  //| slope:1.1076266724381105 intercept:-26.031359356968892
-                                                  //| model  : (Double, Double) = (1.1076266724381105,-26.031359356968892)
+                                                  //> model  : (Double, Double) = (1.1076266724381105,-26.031359356968892)
                                                   //| slope  : Double = 1.1076266724381105
                                                   //| intercept  : Double = -26.031359356968892
   val predict = fitLine(model)_                   //> predict  : Double => Double = <function1>
@@ -30,14 +28,9 @@ object SimpleLinearRegression_lab_2 {
                                                   //| 3554185)
   // Compare via sum of squared residuals
   // Also prints lots of statistical diagnostics
-  val SSE = sumSquaredResiduals(Y, predictions)   //> Jan 14, 2015 4:53:49 PM com.github.fommil.jni.JniLoader liberalLoad
+  val SSE = sumSquaredResiduals(Y, predictions)   //> Feb 07, 2015 3:46:21 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/j
-                                                  //| niloader4055983863040035033netlib-native_system-osx-x86_64.jnilib
-                                                  //| mean of redisuals: -1.1368683772161604E-14
-                                                  //| SST: 5766.347999999996
-                                                  //| SSR: 5396.447973505608
-                                                  //| SST - (SSE + SSR): 4.547473508864641E-12
-                                                  //| SSR/SST (r^2): 0.935851941905971
+                                                  //| niloader8069819474544415754netlib-native_system-osx-x86_64.jnilib
                                                   //| SSE  : Double = 369.90002649438367
   // Mean squared error. MSE is an unbiased estimate of the variance of the error term epsilon.
   val MSE = SSE / (Y.length - 2)                  //> MSE  : Double = 123.30000883146123
@@ -46,9 +39,14 @@ object SimpleLinearRegression_lab_2 {
   // Standard error of the estimated slope
 	val SEb1 = s / pow(X - mean(X), 2).sum    //> SEb1  : Double = 0.002524412779428091
 	// Using this statistic, it is possible to do a test of the null hypothesis that the population slope equals zero, that is, that there is no linear relationship between the variables x and y.
-	slope / SEb1                              //> res0: Double = 438.7660692674218
+	val t = slope / SEb1                      //> t  : Double = 438.7660692674218
 	val SSR = pow(predictions - mean(Y), 2).sum
                                                   //> SSR  : Double = 5396.447973505608
   // With this statistic it is also possible to do a test of the null hypothesis, i.e. that there is no linear relationship between the variables x and y
-	(SSR/1)/MSE                               //> res1: Double = 43.7668093023579
+	(SSR/1)/MSE                               //> res0: Double = 43.7668093023579
 }
+/*
+
+
+
+*/
