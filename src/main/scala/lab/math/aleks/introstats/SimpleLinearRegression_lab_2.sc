@@ -28,9 +28,9 @@ object SimpleLinearRegression_lab_2 {
                                                   //| 3554185)
   // Compare via sum of squared residuals
   // Also prints lots of statistical diagnostics
-  val SSE = sumSquaredResiduals(Y, predictions)   //> Feb 07, 2015 4:03:45 PM com.github.fommil.jni.JniLoader liberalLoad
+  val SSE = sumSquaredResiduals(Y, predictions)   //> Feb 07, 2015 4:11:51 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/j
-                                                  //| niloader3652562675729034832netlib-native_system-osx-x86_64.jnilib
+                                                  //| niloader1993982409354544542netlib-native_system-osx-x86_64.jnilib
                                                   //| SSE  : Double = 369.90002649438367
   diagnosticLog(Y, predictions)                   //> SSE: 369.90002649438367
                                                   //| mean of redisuals: -1.1368683772161604E-14
@@ -38,7 +38,7 @@ object SimpleLinearRegression_lab_2 {
                                                   //| SSR: 5396.447973505608
                                                   //| SST - (SSE + SSR): 4.547473508864641E-12
                                                   //| SSR/SST (r^2): 0.935851941905971
-                                                  //| 1 - SSR/SST: 0.06414805809402901
+                                                  //| 1 - SSR/SST (Tibshirani version of r^2): 0.06414805809402901
   // Mean squared error. MSE is an unbiased estimate of the variance of the error term epsilon.
   val MSE = SSE / (Y.length - 2)                  //> MSE  : Double = 123.30000883146123
   // The square root of MSE is the standard error of the estimate, which is an unbiased estimate of the standard deviation of the error term epsilon.

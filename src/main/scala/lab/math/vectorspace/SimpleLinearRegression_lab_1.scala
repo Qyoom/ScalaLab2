@@ -55,7 +55,7 @@ object SimpleLinearRegression_lab_1 {
   		// Gives the proportion of the total variation in the y values that is accounted for by the estimated linear relationship between x and y. Numerically equal to the square of the sample correlation coefficient r.
   		val r_squared = SSR/SST
   		val alt_r_squared = 1 - r_squared
-  		println("SSE: " + SSE + "\nmean of redisuals: " + mean((Y_obs - Y_est)) + "\nSST: " + SST + "\nSSR: " + SSR + "\nSST - (SSE + SSR): " + (SST - (SSE + SSR)) + "\nSSR/SST (r^2): " + r_squared + "\n1 - SSR/SST: " + alt_r_squared)
+  		println("SSE: " + SSE + "\nmean of redisuals: " + mean((Y_obs - Y_est)) + "\nSST: " + SST + "\nSSR: " + SSR + "\nSST - (SSE + SSR): " + (SST - (SSE + SSR)) + "\nSSR/SST (r^2): " + r_squared + "\n1 - SSR/SST (Tibshirani version of r^2): " + alt_r_squared)
  	}
 
 }
