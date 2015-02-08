@@ -42,6 +42,16 @@ object SimpleLinearRegression_lab_1 {
   		val SSE = pow(Y_obs - Y_est, 2).sum
   		SSE
 	}
+	
+	def correlation(X: DenseVector[Double], Y: DenseVector[Double]): Double = {
+		val x_mean = mean(X)
+		val y_mean = mean(Y)
+		val x_diffs = X - x_mean
+		val y_diffs = Y - y_mean
+		val numer = (x_diffs :* y_diffs).sum
+		val denom = sqrt(pow(x_diffs, 2).sum) * sqrt(pow(y_diffs, 2).sum)
+		numer / denom
+	}
   
  	def diagnosticLog(Y_obs: DenseVector[Double], Y_est: DenseVector[Double]) {
   		require(Y_obs.length == Y_est.length)
