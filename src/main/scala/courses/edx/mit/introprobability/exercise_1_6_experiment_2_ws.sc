@@ -1,6 +1,7 @@
 package courses.edx.mit.introprobability
 
 import courses.edx.mit.introprobability.Exercise_1_6._
+import courses.edx.mit.introprobability.ProbabilityFuncs1._
 
 object exercise_1_6_experiment_2_ws {
 

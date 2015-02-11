@@ -24,17 +24,7 @@ object Exercise_1_6 {
   		_3rd_coin <- sides
 	} yield List(_1st_coin, _2nd_coin, _3rd_coin)
   
-	println("sampleSpace.length: " + sampleSpace.length)
-	
-	// P(A|B)
-	def Pr_A_given_B (A:TossSeq, B:TossSeq): (Int, Int) = {
-  		val A_intercept_B = for {
-  			B_event <- B
-  			A_event <- A
-  			if(A_event == B_event)
-  		} yield A_event
-  		(A_intercept_B.length, B.length)
-	}
+	println("sampleSpace.length: " + sampleSpace.length) 
 	
 	// ----- log sample space ------------ //
 	
