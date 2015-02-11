@@ -2,7 +2,7 @@ package courses.edx.mit.introprobability
 
 import courses.edx.mit.introprobability.Exercise_1_6._
 
-object exercise_1_6_experiment_1_ws {
+object exercise_1_6_experiment_2_ws {
 
 	// Event space is all combinations of 3 coin tosses
 	// See Exercise_1_6 (import)
@@ -27,20 +27,20 @@ object exercise_1_6_experiment_1_ws {
   		} yield event
   }                                               //> A  : courses.edx.mit.introprobability.Exercise_1_6.TossSeq => List[List[cour
                                                   //| ses.edx.mit.introprobability.Exercise_1_6.Toss.Value]] = <function1>
-  // Event: First toss is a Head
+  // Event: Second toss is a Tail
   val B = (sampleSpace: TossSeq) => {
   		for{
   			event <- sampleSpace
-  			if (event.head == H)
+  			if (event(2) == T)
   		} yield event
   }                                               //> B  : courses.edx.mit.introprobability.Exercise_1_6.TossSeq => List[List[cour
                                                   //| ses.edx.mit.introprobability.Exercise_1_6.Toss.Value]] = <function1>
   // P(A|B)
   val (numer, denom) = Pr_A_given_B( A(sampleSpace), B(sampleSpace) )
-                                                  //> numer  : Int = 3
+                                                  //> numer  : Int = 1
                                                   //| denom  : Int = 4
-  numer / denom.toDouble                          //> res0: Double = 0.75
-  println("P(A|B): " + numer + "/" + denom)       //> P(A|B): 3/4
+  numer / denom.toDouble                          //> res0: Double = 0.25
+  println("P(A|B): " + numer + "/" + denom)       //> P(A|B): 1/4
   
 }
 /*
