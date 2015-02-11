@@ -4,17 +4,17 @@ object Exercise_1_6 {
 	
   	// ----- Sample Space ------------- //
 	
-	object Toss extends Enumeration {
-	  	type Toss = Value
+	object Coin extends Enumeration {
+	  	type Coin = Value
 		val Heads, Tails = Value
   	}
-  	val H = Toss.Heads
-  	val T = Toss.Tails
-  	val sides = Toss.values.toList
+  	val H = Coin.Heads
+  	val T = Coin.Tails
+  	val sides = Coin.values.toList
   	
   	// Events are possible sequences of a uniform number of coin tosses
   	// List of events
-  	type TossSeq = List[List[Toss.Value]]
+  	type TossSeq = List[List[Coin.Value]]
   
 	// Sample space for this experiment is all combinations of three coin tosses
 	// Order of elements matters, i.e. (H,H,T) != (H,T,H)
@@ -23,10 +23,10 @@ object Exercise_1_6 {
   		_2nd_coin <- sides
   		_3rd_coin <- sides
 	} yield List(_1st_coin, _2nd_coin, _3rd_coin)
-  
-	println("sampleSpace.length: " + sampleSpace.length) 
 	
 	// ----- log sample space ------------ //
+  
+	println("sampleSpace.length: " + sampleSpace.length) 
 	
 	val sampleSpace_log = for{
 		event <- sampleSpace

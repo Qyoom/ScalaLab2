@@ -27,7 +27,7 @@ object exercise_1_6_experiment_2_ws {
   			if(numHeads > (event.length - numHeads))
   		} yield event
   }                                               //> A  : courses.edx.mit.introprobability.Exercise_1_6.TossSeq => List[List[cour
-                                                  //| ses.edx.mit.introprobability.Exercise_1_6.Toss.Value]] = <function1>
+                                                  //| ses.edx.mit.introprobability.Exercise_1_6.Coin.Value]] = <function1>
   // Event: Second toss is a Tail
   val B = (sampleSpace: TossSeq) => {
   		for{
@@ -35,11 +35,15 @@ object exercise_1_6_experiment_2_ws {
   			if (event(2) == T)
   		} yield event
   }                                               //> B  : courses.edx.mit.introprobability.Exercise_1_6.TossSeq => List[List[cour
-                                                  //| ses.edx.mit.introprobability.Exercise_1_6.Toss.Value]] = <function1>
-  // P(A|B)
+                                                  //| ses.edx.mit.introprobability.Exercise_1_6.Coin.Value]] = <function1>
+  
+  // ----- Experiment -------------- //
+  
+  // Initiate experiment P(A|B)
   val (numer, denom) = Pr_A_given_B( A(sampleSpace), B(sampleSpace) )
                                                   //> numer  : Int = 1
                                                   //| denom  : Int = 4
+  // Result P(A|B)
   numer / denom.toDouble                          //> res0: Double = 0.25
   println("P(A|B): " + numer + "/" + denom)       //> P(A|B): 1/4
   
