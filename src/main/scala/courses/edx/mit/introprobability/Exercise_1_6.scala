@@ -12,17 +12,17 @@ object Exercise_1_6 {
   	val T = Toss.Tails
   	val sides = Toss.values.toList
   	
-  	// Events are possible sequences of the same number of coin tosses
+  	// Events are possible sequences of a uniform number of coin tosses
   	// List of events
   	type TossSeq = List[List[Toss.Value]]
   
 	// Sample space for this experiment is all combinations of three coin tosses
 	// Order of elements matters, i.e. (H,H,T) != (H,T,H)
 	val sampleSpace:TossSeq = for{
-  		_1st <- sides
-  		_2nd <- sides
-  		_3rd <- sides
-	} yield List(_1st, _2nd, _3rd)
+  		_1st_coin <- sides
+  		_2nd_coin <- sides
+  		_3rd_coin <- sides
+	} yield List(_1st_coin, _2nd_coin, _3rd_coin)
   
 	println("sampleSpace.length: " + sampleSpace.length)
 	

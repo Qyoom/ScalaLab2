@@ -16,7 +16,7 @@ object exercise_1_6_experiment_1_ws {
                                                   //| (Tails,Tails,Heads)
                                                   //| (Tails,Tails,Tails)
  
-	// ----- Probability Laws --------------- //
+	// ----- This experiment's Probability Laws --------------- //
   
   // Event: More Heads than Tails
   val A = (sampleSpace: TossSeq) => {
@@ -31,7 +31,7 @@ object exercise_1_6_experiment_1_ws {
   val B = (sampleSpace: TossSeq) => {
   		for{
   			event <- sampleSpace
-  			if (event.head == H)
+  			if (event.head == H) // not that kind of head
   		} yield event
   }                                               //> B  : courses.edx.mit.introprobability.Exercise_1_6.TossSeq => List[List[cour
                                                   //| ses.edx.mit.introprobability.Exercise_1_6.Toss.Value]] = <function1>
