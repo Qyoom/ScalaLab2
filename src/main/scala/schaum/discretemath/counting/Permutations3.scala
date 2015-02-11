@@ -2,6 +2,7 @@ package schaum.discretemath.counting
 import schaum.discretemath.counting.Factorial._
 
 object Permutations3 {
+  
 	def numPerms(n: Int)(r: Int*): Int = {
   		println("n:" + n + " | r:" + r)
   		
@@ -15,7 +16,7 @@ object Permutations3 {
 	  		}
 	  	}
   		denom(r, 1)
-	}                                               //> numPerms: (n: Int)(r: Int*)Int
+	}
   
-  numPerms(1)(2) 
+	numPerms(1)(2) 
 }

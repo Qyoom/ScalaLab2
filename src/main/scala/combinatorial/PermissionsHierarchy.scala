@@ -6,7 +6,7 @@ object PermissionHierarchyLab3 extends App {
   
   	object Role extends Enumeration {
 	  	type Role = Value
-    	val NON, VIEW, EDIT, ORG_ADMIN, Q_ADMIN = Value
+		val NON, VIEW, EDIT, ORG_ADMIN, Q_ADMIN = Value
   	}
   
   	case class UserPermission(

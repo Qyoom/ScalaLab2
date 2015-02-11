@@ -1,9 +1,10 @@
 package schaum.discretemath.counting
+
 import schaum.discretemath.counting.Factorial._
 import schaum.discretemath.counting.BinomialTheorem._
 
 object Combinations1 {
-  println("Schaum Combinations, p.93")            //> Schaum Combinations, p.93
+  // Schaum Combinations, p.93
   
   // Example 5.7
   // C(n, r) * r!

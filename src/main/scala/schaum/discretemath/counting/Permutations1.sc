@@ -1,10 +1,10 @@
 package schaum.discretemath.counting
 import schaum.discretemath.counting.Factorial._
 
+// Schaum Permutations
 // Theorem 5.4, p.91
 // Also example on p. 93, Sampling without replacement
 object Permutations1 {
-  println("Schaum Permutations")                  //> Schaum Permutations
   
   def numPerms(n: Int, r: Int): Int = {
   		println("n:" + n + " | r:" + r)

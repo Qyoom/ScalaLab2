@@ -2,7 +2,7 @@ package schaum.discretemath.counting
 
 // Example 5.12a
 object Trees1 {
-  println("Schaum Discrete Math p.95")            //> Schaum Discrete Math p.95
+  // Schaum Discrete Math p.95
   
   val A = List("1", "2")                          //> A  : List[String] = List(1, 2)
   val B = List("a", "b", "c")                     //> B  : List[String] = List(a, b, c)

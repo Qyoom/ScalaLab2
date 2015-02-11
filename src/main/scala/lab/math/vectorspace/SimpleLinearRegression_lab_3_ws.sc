@@ -53,9 +53,9 @@ object SimpleLinearRegression_lab_3_ws {
   // Prediction output
  
   // ----- Output measures -------- //
-  diagnosticLog(Y, predictions)                   //> Feb 07, 2015 4:41:05 PM com.github.fommil.jni.JniLoader liberalLoad
+  diagnosticLog(Y, predictions)                   //> Feb 07, 2015 5:47:21 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/
-                                                  //| jniloader3831688085666920934netlib-native_system-osx-x86_64.jnilib
+                                                  //| jniloader3319352285365169401netlib-native_system-osx-x86_64.jnilib
                                                   //| SSE: 12.124999999999998
                                                   //| mean of redisuals: -9.516197353929913E-16
                                                   //| SST: 41.559999999999995
@@ -63,6 +63,7 @@ object SimpleLinearRegression_lab_3_ws {
                                                   //| SST - (SSE + SSR): -1.4210854715202004E-14
                                                   //| SSR/SST (r^2): 0.7082531280077
                                                   //| 1 - SSR/SST (Tibshirani version of r^2): 0.2917468719923
+                                                  //| F: 0.2942318425586639
   
   // According to Tibshirani, cor(X,Y) should be equal to r^2 (i.e. SSR/SST) and this appears true. However, the version he presents (in course video) using 1 - SSR/SST is wrong.
   val r = correlation(X, Y)                       //> r  : Double = 0.8415777611175929

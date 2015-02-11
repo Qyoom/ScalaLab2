@@ -56,16 +56,29 @@ object SimpleLinearRegression_lab_1 {
  	def diagnosticLog(Y_obs: DenseVector[Double], Y_est: DenseVector[Double]) {
   		require(Y_obs.length == Y_est.length)
   		val Y_mean = mean(Y_obs)
+  		
   		// Sum of the squared errors (residuals, or difference between observed and predicted)
   		val SSE = sumSquaredResiduals(Y_obs, Y_est)
+  		
   		// Regression sum of squares
   		val SSR = pow(Y_est - Y_mean, 2).sum
+  		
   		// Total sum of Squares, spread of Y values about their mean
   		val SST = pow(Y_obs - Y_mean, 2).sum
+  		
   		// Gives the proportion of the total variation in the y values that is accounted for by the estimated linear relationship between x and y. Numerically equal to the square of the sample correlation coefficient r.
   		val r_squared = SSR/SST
   		val alt_r_squared = 1 - r_squared
-  		println("SSE: " + SSE + "\nmean of redisuals: " + mean((Y_obs - Y_est)) + "\nSST: " + SST + "\nSSR: " + SSR + "\nSST - (SSE + SSR): " + (SST - (SSE + SSR)) + "\nSSR/SST (r^2): " + r_squared + "\n1 - SSR/SST (Tibshirani version of r^2): " + alt_r_squared)
+  		
+  		val F = {
+  			val p = 1 // number of parameters. This example is a simple single variable
+  			val n = Y_obs.length // sample size
+  			val numer = (SST - SSR) / n
+  			val denom = SSR / (n - p - 1)
+  			numer / denom
+  		}
+  		
+  		println("SSE: " + SSE + "\nmean of redisuals: " + mean((Y_obs - Y_est)) + "\nSST: " + SST + "\nSSR: " + SSR + "\nSST - (SSE + SSR): " + (SST - (SSE + SSR)) + "\nSSR/SST (r^2): " + r_squared + "\n1 - SSR/SST (Tibshirani version of r^2): " + alt_r_squared + "\nF: " + F)
  	}
 
 }

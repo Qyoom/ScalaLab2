@@ -3,7 +3,7 @@ import schaum.discretemath.counting.Factorial._
 
 // EXAMPLE 5.5
 object Permutations2 {
-  println("Schaum Permutations, EXAMPLE 5.5")     //> Schaum Permutations, EXAMPLE 5.5
+  // Schaum Permutations, EXAMPLE 5.5
   
   def numPerms(n: Int)(r: Int*): Int = {
   		// recursive
