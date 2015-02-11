@@ -29,24 +29,24 @@ object exercise_1_7_experiment_1_ws {
   	// ----- This experiment's Probability Laws --------------- //
   	
   	// Event: {max(X,Y) = m}
-  def A_roll (sampleSpace: RollSeq)(m: Int) = {
+  def A_event (sampleSpace: RollSeq)(m: Int) = {
   		for{
   			event <- sampleSpace
   			if(event.max == m)
   		} yield event
-  }                                               //> A_roll: (sampleSpace: courses.edx.mit.introprobability.Exercise_1_7.RollSeq)
-                                                  //| (m: Int)List[List[Int]]
+  }                                               //> A_event: (sampleSpace: courses.edx.mit.introprobability.Exercise_1_7.RollSeq
+                                                  //| )(m: Int)List[List[Int]]
   // Event: {min(X,Y) = m}
-  def B_roll (sampleSpace: RollSeq)(m: Int) = {
+  def B_event (sampleSpace: RollSeq)(m: Int) = {
   		for{
   			event <- sampleSpace
   			if(event.min == m)
   		} yield event
-  }                                               //> B_roll: (sampleSpace: courses.edx.mit.introprobability.Exercise_1_7.RollSeq)
-                                                  //| (m: Int)List[List[Int]]
+  }                                               //> B_event: (sampleSpace: courses.edx.mit.introprobability.Exercise_1_7.RollSeq
+                                                  //| )(m: Int)List[List[Int]]
   
-  val A = A_roll(sampleSpace)_                    //> A  : Int => List[List[Int]] = <function1>
-  val B = B_roll(sampleSpace)_                    //> B  : Int => List[List[Int]] = <function1>
+  val A = A_event(sampleSpace)_                   //> A  : Int => List[List[Int]] = <function1>
+  val B = B_event(sampleSpace)_                   //> B  : Int => List[List[Int]] = <function1>
   
   // ----- Experiment -------------- //
   
