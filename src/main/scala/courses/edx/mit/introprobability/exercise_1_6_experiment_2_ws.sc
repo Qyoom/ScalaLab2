@@ -37,7 +37,7 @@ object exercise_1_6_experiment_2_ws {
   }                                               //> B  : courses.edx.mit.introprobability.Exercise_1_6.TossSeq => List[List[cour
                                                   //| ses.edx.mit.introprobability.Exercise_1_6.Coin.Value]] = <function1>
   
-  // ----- Experiment -------------- //
+  // ----- Experiments -------------- //
   
   // Initiate experiment P(A|B)
   val (numer, denom) = Pr_A_given_B( A(sampleSpace), B(sampleSpace) )
@@ -47,6 +47,15 @@ object exercise_1_6_experiment_2_ws {
   numer / denom.toDouble                          //> res0: Double = 0.25
   println("P(A|B): " + numer + "/" + denom)       //> P(A|B): 1/4
   
+  // P(A intercept B)
+  Pr_A_intercept_B( A(sampleSpace), B(sampleSpace) )
+                                                  //> res1: Double = 1.0
+  
+  // P(B)
+  B(sampleSpace).length                           //> res2: Int = 4
+  
+  // P(A)
+  A(sampleSpace).length                           //> res3: Int = 4
 }
 /*
 
