@@ -1,5 +1,5 @@
 package lab.math.aleks.introstats
-
+ 
 import lab.math.Rounding_lab_1._
 
 object Conditional_Probability_ws {

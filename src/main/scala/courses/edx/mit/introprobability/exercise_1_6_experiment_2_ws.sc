@@ -16,7 +16,7 @@ object exercise_1_6_experiment_2_ws {
                                                   //| (Tails,Heads,Tails)
                                                   //| (Tails,Tails,Heads)
                                                   //| (Tails,Tails,Tails)
- 
+
 	// ----- Probability Laws --------------- //
   
   // Event: More Heads than Tails
@@ -48,9 +48,9 @@ object exercise_1_6_experiment_2_ws {
   println("P(A|B): " + numer + "/" + denom)       //> P(A|B): 1/4
   
   // P(A intercept B)
-  Pr_A_intercept_B( A(sampleSpace), B(sampleSpace) )
+  Pr_A_intersect_B( A(sampleSpace), B(sampleSpace) )
                                                   //> res1: Double = 1.0
-  
+ 
   // P(B)
   B(sampleSpace).length                           //> res2: Int = 4
   
