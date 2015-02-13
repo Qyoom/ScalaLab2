@@ -15,14 +15,13 @@ object Derivative_formula_1_ws {
   // http://cobweb.cs.uga.edu/~jam/scalation_1.1/doc/index.html#scalation.calculus.Calculus$
   val h = 1E-10                                   //> h  : Double = 1.0E-10
   type FunctionS2S = (Double) => Double
-  /** Estimate the derivative of the scalar-to-scalar function f at point x.
-     *  @param f  the function whose derivative is sought
-     *  @param x  the point (scalar) at which to estimate the derivative
-     */
-    def derivative (f: FunctionS2S, x: Double): Double =
-    {
-        (f(x + h) - f(x)) / h
-    } // derivative                               //> derivative: (f: Double => Double, x: Double)Double
+  /**Estimate the derivative of the scalar-to-scalar function f at point x.
+   * @param f  the function whose derivative is sought
+   * @param x  the point (scalar) at which to estimate the derivative
+   */
+  def derivative (f: FunctionS2S, x: Double): Double = {
+		(f(x + h) - f(x)) / h
+	}                                         //> derivative: (f: Double => Double, x: Double)Double
   
   // --------------------------------- //
   

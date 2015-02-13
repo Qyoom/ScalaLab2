@@ -21,11 +21,8 @@ object Example_2_ws {
                                                   //| derivative step: -0.0277780555583027
                                                   //| derivative step: -0.027777777777777776
                                                   //| res0: Double = -0.027777777777777776
-  val f2_dv2 = derivative_model_A(f2)_            //> f2_dv2  : Double => Double = <function1>
-  f2_dv2(6)                                       //> initial slope: -Infinity
-                                                  //| derivative step: -0.0277780555583027
-                                                  //| derivative step: -0.027777777777777776
-                                                  //| res1: Double = -0.027777777777777776
+  val f2_dv2 = derivative_model_B(f2)_            //> f2_dv2  : Double => Double = <function1>
+  f2_dv2(6)                                       //> res1: Double = -0.027777780076121417
   
   val f1_dv1 = derivative_model_A(f1)_            //> f1_dv1  : Double => Double = <function1>
   f1_dv1(x0)                                      //> initial slope: 5.0

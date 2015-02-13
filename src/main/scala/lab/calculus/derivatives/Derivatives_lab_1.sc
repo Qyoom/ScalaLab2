@@ -7,8 +7,8 @@ object Derivatives_lab_1 {
 	 * what I'm seeing in Schaum's Differential and Integral Calculus.
 	 */
 
-	val x1 = -5 //3                           //> x1  : Int = -5
-	val x2 = 12 //7                           //> x2  : Int = 12
+	val x1 = -5                               //> x1  : Int = -5
+	val x2 = 12                               //> x2  : Int = 12
 	// the expected derivative
 	2 * x1                                    //> res0: Int = -10
 

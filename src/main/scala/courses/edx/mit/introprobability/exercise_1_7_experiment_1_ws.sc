@@ -28,7 +28,7 @@ object exercise_1_7_experiment_1_ws {
   	
   	// ----- This experiment's Probability Laws --------------- //
   	
-  	// Event: {max(X,Y) = m}
+  	// Event: {max(X,Y) = m} where X = first roll, Y = second roll
   def A_event (sampleSpace: RollSeq)(m: Int) = {
   		for{
   			event <- sampleSpace
@@ -36,7 +36,7 @@ object exercise_1_7_experiment_1_ws {
   		} yield event
   }                                               //> A_event: (sampleSpace: courses.edx.mit.introprobability.Exercise_1_7.RollSeq
                                                   //| )(m: Int)List[List[Int]]
-  // Event: {min(X,Y) = m}
+  // Event: {min(X,Y) = m} where X = first roll, Y = second roll
   def B_event (sampleSpace: RollSeq)(m: Int) = {
   		for{
   			event <- sampleSpace
