@@ -5,7 +5,7 @@ import scala.math._
 
 object Derivatives_lab_2 {
 
-	/** Collins Intro Calculus, Ch.3 Derivatives, p.88, Ex.3.1(a) **/
+	/** Collins Intro Calculus, Ch.3 Derivatives - Tangent lines (slope), p.88, Ex.3.1(a) **/
 	
 	def fa(x: Double) = 4 * x - 6             //> fa: (x: Double)Double
 	val x0 = 1                                //> x0  : Int = 1
