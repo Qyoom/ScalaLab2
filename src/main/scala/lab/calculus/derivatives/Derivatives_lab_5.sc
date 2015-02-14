@@ -2,6 +2,8 @@ package lab.calculus.derivatives
 
 import lab.calculus.derivatives.Derivative3._
 import scala.math._
+import lab.math.NthRoot._
+import lab.math.vectorspace.VectorSpaceFunctions_lab_1._
 
 object Derivatives_lab_5 {
 
@@ -152,7 +154,7 @@ object Derivatives_lab_5 {
 	2*(-1) + 5*pow(-1,4)                      //> res50: Double = 3.0
 	dmB_f4(-1)                                //> res51: Double = 3.000000248221113
 	
-	2*1 + 5*pow(1,4)                          //> res52: Double = 7.0
+	2*3 + 5*pow(3,4)                          //> res52: Double = 411.0
 	dmB_f4(3)                                 //> res53: Double = 411.00008729699766
 	
 	2*(-3) + 5*pow(-3,4)                      //> res54: Double = 399.0
@@ -163,6 +165,57 @@ object Derivatives_lab_5 {
 	
 	2*(-0.5) + 5*pow(-0.5,4)                  //> res58: Double = -0.6875
 	dmB_f4(-0.5)                              //> res59: Double = -0.6875000568840051
+	
+	// ===== Tests ============================== //
+	
+	// ----- Example 3.4(a) ----- //
+	def f5(x: Double) = 4*pow(x,3) - 7*pow(x,2) + 2
+                                                  //> f5: (x: Double)Double
+  // Derivative: 12*x^2 - 14*x
+	val dmB_f5 = derivative_model_B(f5)_      //> dmB_f5  : Double => Double = <function1>
+	
+	12*pow(1,2) - 14*1                        //> res60: Double = -2.0
+	dmB_f5(1)                                 //> res61: Double = -2.000000165480742
+	
+	12*pow(-2,2) - 14*(-2)                    //> res62: Double = 76.0
+	dmB_f5(-2)                                //> res63: Double = 76.0000062882682
+	
+	// ----- Example 3.4(b) ----- //
+	///// HAVING TROUBLE WITH THIS ONE!!
+	def f6(x: Double) = nthRoot(x,3) + (5d/sqrt(x))
+                                                  //> f6: (x: Double)Double
+	//def f6(x: Double) = pow(x,-(1d/3)) + (5/sqrt(x))
+	// Derivative: 1/3 * pow(x,-2/3) - (5/2)*pow(x,-3/2)
+	val dmB_f6 = derivative_model_B(f6)_      //> dmB_f6  : Double => Double = <function1>
+	
+	(1d/3d) * pow(1,-(2d/3d)) - (5d/2d)*pow(1,-(3d/2d))
+                                                  //> res64: Double = -2.1666666666666665
+	dmB_f6(1)                                 //> res65: Double = -2.000000165480742
+	
+	(1d/3d) * pow(1.1,-2d/3d) - (5d/2d)*pow(1.1,-3d/2d)
+                                                  //> res66: Double = -1.8541482739047193
+	dmB_f6(1.1)                               //> res67: Double = -1.666968785229983
+	
+	val dmA_f6 = derivative_model_A(f6)_      //> dmA_f6  : Double => Double = <function1>
+	//dmA_f6(1.1) // spins - doesn't resolve
+	
+	// ----- Example 3.5 ----- //
+	def f7(x: Double) = pow(x,3) + 2*x + 1    //> f7: (x: Double)Double
+	val dmA_f7 = derivative_model_A(f7, 4)_   //> dmA_f7  : Double => Double = <function1>
+	dmA_f7(1)                                 //> initial slope: 23.0
+                                                  //| derivative step: 5.000090000895626
+                                                  //| derivative step: 5.0
+                                                  //| res68: Double = 5.0
+  // point-slope form of a line
+  // y = mx + b
+  // Correct point slope form at (1,4): y = 5x - 1
+  // solveFor(y, x, yIntercept, slope, errorTerm)
+  solveFor(Some(4d), Some(1d), None, Some(5d), None)
+                                                  //> res69: (String, Double) = (yIntercept,-1.0)
+  solveFor(None, Some(1d), Some(-1d), Some(5d), None)
+                                                  //> res70: (String, Double) = (y,4.0)
+  solveFor(Some(4d), None, Some(-1d), Some(5d), None)
+                                                  //> res71: (String, Double) = (x,1.0)
 }
 /*
 
