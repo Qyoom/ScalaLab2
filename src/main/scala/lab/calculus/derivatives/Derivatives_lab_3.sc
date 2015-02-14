@@ -15,6 +15,8 @@ object Derivatives_lab_3 {
 	// x0 = -1
 	6*(-1) -2                                 //> res1: Int = -8
 	
+	// ----- Model A ----- //
+	
 	val dmA_fa = derivative_model_A(fa)_      //> dmA_fa  : Double => Double = <function1>
 	dmA_fa(3)                                 //> initial slope: 7.0
                                                   //| derivative step: 15.999910000051765
@@ -23,5 +25,11 @@ object Derivatives_lab_3 {
 	dmA_fa(-1)                                //> initial slope: -5.0
                                                   //| derivative step: -7.999969999997518
                                                   //| res3: Double = -7.999969999997518
+	
+	// ----- Model B ----- //
+	
+	val dmB_fa = derivative_model_B(fa)_      //> dmB_fa  : Double => Double = <function1>
+  dmB_fa(3)                                       //> res4: Double = 16.000001323845936
+  dmB_fa(-1)                                      //> res5: Double = -8.000000661922968
 	
 }
