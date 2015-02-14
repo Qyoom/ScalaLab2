@@ -50,6 +50,7 @@ object Derivatives_lab_5 {
 	///////////////////////////////////////////////////////////////////
 	// The Power Rule: The derivative of x^n is n*x^(n-1)
 	def f2(x: Double) = pow(x,4)              //> f2: (x: Double)Double
+	// Derivative: 4 * pow(x, 4-1)
 	
 	// ----- Model A ----------------------- //
 	
@@ -95,11 +96,11 @@ object Derivatives_lab_5 {
 	// The derivative of a constant times a function is
 	// the constant times the derivative of the function.
 	def f3(x: Double) = 5 * pow(x, 3)         //> f3: (x: Double)Double
+	// Derivative: 15*x^2
 	
 	// ----- Model A ----------------------- //
 	
 	val dmA_f3 = derivative_model_A(f3)_      //> dmA_f3  : Double => Double = <function1>
-	// Derivative: 15*x^2
 	
 	15*pow(1,2)                               //> res30: Double = 15.0
 	dmA_f3(1)                                 //> initial slope: 5.0
