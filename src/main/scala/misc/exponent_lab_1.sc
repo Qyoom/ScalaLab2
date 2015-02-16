@@ -7,6 +7,7 @@ object exponent_lab_1 {
 	pow(3, 0)                                 //> res3: Double = 1.0
 	pow(3, 1.5)                               //> res4: Double = 5.196152422706632
 	
+	//Power Rule
 	//nx^n-1
 	3*pow(5,3-1)                              //> res5: Double = 75.0
 	pow((3*5),3-1)                            //> res6: Double = 225.0
