@@ -1,7 +1,9 @@
-package lab.math.projeuler
+package lab.math.projeuler._4_palind
 
 object Palindrome {
   
+	// TODO: This per-character parsing is unnecessary. Use reverse (below) instead.
+	/*
 	def isPal(n: Int): Boolean = {
   		def inter(nStr: String): Boolean = {
   			val len = nStr.length
@@ -17,5 +19,11 @@ object Palindrome {
 	  		else true
   		}
   		inter(n.toString)
+	}
+	*/
+	
+	def isPal(n: Int): Boolean = {
+	  val nStr = n.toString()
+	  nStr == nStr.reverse
 	}
 }
