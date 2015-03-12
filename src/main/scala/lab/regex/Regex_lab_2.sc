@@ -1,9 +1,10 @@
 package lab.regex
 
+import scala.util.matching.Regex
+
 object Regex_lab_2 {
-  println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
   
-	val projectIdRegEx = new scala.util.matching.Regex(
+	val projectIdRegEx = new Regex(
 		"""/(projects)/([0-9]*)/""", "projectsLiteral", "projectId")
                                                   //> projectIdRegEx  : scala.util.matching.Regex = /(projects)/([0-9]*)/
 		
