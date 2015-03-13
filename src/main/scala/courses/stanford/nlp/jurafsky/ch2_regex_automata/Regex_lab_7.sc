@@ -1,5 +1,11 @@
 package courses.stanford.nlp.jurafsky.ch2_regex_automata
 
+import scala.util.matching.Regex
+
 object Regex_lab_7 {
-  println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
+
+	// 2.1.2 Disjunction, Grouping, and Precedence
+	
+	
+	
 }

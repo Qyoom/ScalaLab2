@@ -10,7 +10,10 @@ object Percentile_lab_2_ws {
 		val max_ = X(X.length - 1)
 		val median_ = medianByHand(X)
 		val Q1 = medianByHand(X.take(X.length/2))
-		val Q3 = medianByHand(X.drop(X.length/2))
+		val Q3 = {
+			if(X.length % 2 == 0) medianByHand(X.drop(X.length/2))
+			else                  medianByHand(X.drop(X.length/2 + 1))
+		}
 		(min_, Q1, median_, Q3, max_)
 	}                                         //> whiskerValues: (X0: List[Double])(Double, Double, Double, Double, Double)
 	

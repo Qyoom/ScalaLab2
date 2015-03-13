@@ -30,34 +30,33 @@ object K_nearest_neighbor_1_ws {
                                                   //| -1.0  0.0  1.0  
                                                   //| 1.0   1.0  1.0  
 	
-	X_mat_A                                   //> res0: breeze.linalg.DenseMatrix[Double] = 0.0   3.0  0.0  
+	println("X_mat_A:\n" + X_mat_A)           //> X_mat_A:
+                                                  //| 0.0   3.0  0.0  
                                                   //| 2.0   0.0  0.0  
                                                   //| 0.0   1.0  3.0  
                                                   //| 0.0   1.0  2.0  
                                                   //| -1.0  0.0  1.0  
                                                   //| 1.0   1.0  1.0  
   // matrix dimensions
-	(X_mat_A.rows, X_mat_A.cols)              //> res1: (Int, Int) = (6,3)
-	X_mat_A(::,1)                             //> res2: breeze.linalg.DenseVector[Double] = DenseVector(3.0, 0.0, 1.0, 1.0, 0.
-                                                  //| 0, 1.0)
+	(X_mat_A.rows, X_mat_A.cols)              //> res0: (Int, Int) = (6,3)
 	
   // column vector
-	X_mat_A(::,1)                             //> res3: breeze.linalg.DenseVector[Double] = DenseVector(3.0, 0.0, 1.0, 1.0, 0.
+	X_mat_A(::,1)                             //> res1: breeze.linalg.DenseVector[Double] = DenseVector(3.0, 0.0, 1.0, 1.0, 0.
                                                   //| 0, 1.0)
   // Using Breeze Broadcasting
   
   // sum each column
-	sum(X_mat_A(::, *))                       //> res4: breeze.linalg.DenseMatrix[Double] = 2.0  6.0  7.0  
+	sum(X_mat_A(::, *))                       //> res2: breeze.linalg.DenseMatrix[Double] = 2.0  6.0  7.0  
 	
 	// norm each row
-	norm(X_mat_A(*,::))                       //> res5: breeze.linalg.DenseVector[Double] = DenseVector(3.0, 2.0, 3.1622776601
+	norm(X_mat_A(*,::))                       //> res3: breeze.linalg.DenseVector[Double] = DenseVector(3.0, 2.0, 3.1622776601
                                                   //| 683795, 2.23606797749979, 1.4142135623730951, 1.7320508075688772)
 	// euclidean distance
   for(v <- X_mat_A(*,::)) yield eucDist(v, testPoint)
-                                                  //> Feb 07, 2015 1:23:50 PM com.github.fommil.jni.JniLoader liberalLoad
+                                                  //> Mar 11, 2015 9:10:22 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/j
-                                                  //| niloader1281677575783985213netlib-native_system-osx-x86_64.jnilib
-                                                  //| res6: breeze.linalg.DenseVector[Double] = DenseVector(3.0, 2.0, 3.1622776601
+                                                  //| niloader1278810354655385962netlib-native_system-osx-x86_64.jnilib
+                                                  //| res4: breeze.linalg.DenseVector[Double] = DenseVector(3.0, 2.0, 3.1622776601
                                                   //| 683795, 2.23606797749979, 1.4142135623730951, 1.7320508075688772)
 	
 

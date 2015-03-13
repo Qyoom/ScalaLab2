@@ -56,6 +56,9 @@ object Scala_Regex_class {
                                                   //| 1958
                                                   //| 2010
                                                   //| 2011
+  // rw: experiment
+  date findFirstMatchIn dates getOrElse "bugger!" //> res4: Object = 2004-01-20
+                                                  
   // But findAllIn returns a special iterator of strings that can be queried for the MatchData of the last match:
 	val mi = date findAllIn dates             //> mi  : scala.util.matching.Regex.MatchIterator = non-empty iterator
 	val oldies = mi filter (_ => (mi group 1).toInt < 1960) map (s => s"$s: An oldie but goodie.")
@@ -79,10 +82,52 @@ object Scala_Regex_class {
                                                   //> hats  : List[String] = List(hath, hattth)
 	val pos = (hat findAllMatchIn hathaway map (_.start)).toList  // List(0, 7)
                                                   //> pos  : List[Int] = List(0, 7)
-  
+  // To return overlapping matches, it is possible to formulate a regular expression with lookahead (?=) that does not consume the overlapping region.
+	val madhatter = "(h)(?=(at[^a]+))".r      //> madhatter  : scala.util.matching.Regex = (h)(?=(at[^a]+))
+	/* ERROR
+	val madhats = (madhatter findAllMatchIn hathaway map {
+	  case madhatter(x,y) => s"$x$y"
+	}).toList
+	*/
 	
+	val example = for (words <- """\w+""".r findAllIn "A simple example.") yield words
+                                                  //> example  : Iterator[String] = non-empty iterator
+  example.foreach(println)                        //> A
+                                                  //| simple
+                                                  //| example
+	
+	
+	
+	
+	// Text replacement can be performed unconditionally or as a function of the current match:
+	val redacted    = date replaceAllIn (dates, "XXXX-XX-XX")
+                                                  //> redacted  : String = Important dates in history: XXXX-XX-XX, XXXX-XX-XX, XX
+                                                  //| XX-XX-XX, XXXX-XX-XX
+	val yearsOnly   = date replaceAllIn (dates, m => m group 1)
+                                                  //> yearsOnly  : String = Important dates in history: 2004, 1958, 2010, 2011
+	val months      = (0 to 11) map {
+		i => val c = java.util.Calendar.getInstance
+		c.set(2014, i, 1)
+		f"$c%tb"                          //> months  : scala.collection.immutable.IndexedSeq[String] = Vector(Jan, Feb, 
+                                                  //| Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec)
+	}
+	val reformatted = date replaceAllIn (dates, _ match {
+			case date(y,m,d) => f"${
+				months(m.toInt - 1)
+			} $d, $y"
+		}
+	)                                         //> reformatted  : String = Important dates in history: Jan 20, 2004, Sep 05, 1
+                                                  //| 958, Oct 06, 2010, Jul 15, 2011
+       
+	// Pattern matching the Match against the Regex that created it does not reapply the Regex. In the expression for reformatted, each date match is computed once. But it is possible to apply a Regex to a Match resulting from a different pattern:
+	val docSpree = """2011(?:-\d{2}){2}""".r  //> docSpree  : scala.util.matching.Regex = 2011(?:-\d{2}){2}
+	val docView  = date replaceAllIn (dates, _ match {
+	  case docSpree() => "Historic doc spree!" // Note: the empty params are required!
+	  case _          => "Something else happened"
+	})                                        //> docView  : String = Important dates in history: Something else happened, So
+                                                  //| mething else happened, Something else happened, Historic doc spree!
 	// stub to alow for trailing comments
-	0                                         //> res4: Int(0) = 0
+	0                                         //> res5: Int(0) = 0
 }
 /*
 
