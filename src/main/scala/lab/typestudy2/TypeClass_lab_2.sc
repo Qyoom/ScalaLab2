@@ -76,8 +76,8 @@ object TypeClass_lab_2 {
   }
   
   // RW: My experiment with provide another implicit type extension for Boolean
-  implicit object BooleanFeatures extends FeatureVector2[List[Boolean]] {
-  		def features(x: List[Boolean]): Array[Double] = {
+  implicit object BooleanFeatures extends FeatureVector2[Array[Boolean]] {
+  		def features(x: Array[Boolean]): Array[Double] = {
   			// Just count the occurrences of true and false
   			val result = Array.ofDim[Double](2)
   			result(0) = x.filter{_ equals false}.size.toDouble
@@ -94,7 +94,7 @@ object TypeClass_lab_2 {
   // Classify some Strings
   val stringClassifier = new LinearClassifier4[String](testWeights1)
                                                   //> stringClassifier  : lab.typestudy2.TypeClass_lab_2.LinearClassifier4[String
-                                                  //| ] = lab.typestudy2.TypeClass_lab_2$LinearClassifier4@44ce3dad
+                                                  //| ] = lab.typestudy2.TypeClass_lab_2$LinearClassifier4@1cad8848
  
   // negative-weight 'a', should be classified as false
   val exStr1 = "aaa"                              //> exStr1  : String = aaa
@@ -121,26 +121,26 @@ object TypeClass_lab_2 {
   val testWeights2 = Array[Double](-1.0, 1.0)     //> testWeights2  : Array[Double] = Array(-1.0, 1.0)
   
   // Classify some Strings
-  val booleanClassifier = new LinearClassifier4[List[Boolean]](testWeights2)
-                                                  //> booleanClassifier  : lab.typestudy2.TypeClass_lab_2.LinearClassifier4[List[
-                                                  //| Boolean]] = lab.typestudy2.TypeClass_lab_2$LinearClassifier4@50f8963c
+  val booleanClassifier = new LinearClassifier4[Array[Boolean]](testWeights2)
+                                                  //> booleanClassifier  : lab.typestudy2.TypeClass_lab_2.LinearClassifier4[Array
+                                                  //| [Boolean]] = lab.typestudy2.TypeClass_lab_2$LinearClassifier4@8960882
   // negative-weight 'false', should be classified as false
-  val exBool1 = List(false, false, false, false)  //> exBool1  : List[Boolean] = List(false, false, false, false)
+  val exBool1 = Array(false, false, false, false) //> exBool1  : Array[Boolean] = Array(false, false, false, false)
   val predictBool1 = booleanClassifier.classify(exBool1)
                                                   //> predictBool1  : Boolean = false
   println("%s is classified as %b".format(exBool1, predictBool1))
-                                                  //> List(false, false, false, false) is classified as false
-  val exBool2 = List(false, true, false, true)    //> exBool2  : List[Boolean] = List(false, true, false, true)
+                                                  //> [Z@4351aa16 is classified as false
+  val exBool2 = Array(false, true, false, true)   //> exBool2  : Array[Boolean] = Array(false, true, false, true)
   val predictBool2 = booleanClassifier.classify(exBool2)
                                                   //> predictBool2  : Boolean = false
   println("%s is classified as %b".format(exBool2, predictBool2))
-                                                  //> List(false, true, false, true) is classified as false
+                                                  //> [Z@2675ace1 is classified as false
   
-  val exBool3 = List(false, true, true)           //> exBool3  : List[Boolean] = List(false, true, true)
+  val exBool3 = Array(false, true, true)          //> exBool3  : Array[Boolean] = Array(false, true, true)
   val predictBool3 = booleanClassifier.classify(exBool3)
                                                   //> predictBool3  : Boolean = true
   println("%s is classified as %b".format(exBool3, predictBool3))
-                                                  //> List(false, true, true) is classified as true
+                                                  //> [Z@77a8fb80 is classified as true
 }
 /*
 
