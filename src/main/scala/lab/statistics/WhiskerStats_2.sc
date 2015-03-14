@@ -10,7 +10,7 @@ object WhiskerStats_2 {
 		if(X.length % 2 == 0) {
 			val under = X((X.length/2) - 1)
 			val over = X(X.length/2)
-			(under + over) / 2d
+			(under + over) / 2
 		}
 		else {
 			val middle_ = X.length/2
