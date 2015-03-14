@@ -10,4 +10,7 @@ object Null_null_Nil_Nothing_lab {
 	val a = Nil                               //> a  : scala.collection.immutable.Nil.type = List()
 	val b = null                              //> b  : Null = null
 	val c = ()                                //> c  : Unit = ()
+	// val e = Null // Error
+	//val f = Nothing //
+	val h = None                              //> h  : None.type = None
 }
