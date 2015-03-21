@@ -16,7 +16,7 @@ object NthRoot extends App {
 
 		return inter(a/2)
 	}
-  
+   
 	//.............................//
   
 	//println("nthRoot(32, 3) ====> " + nthRoot(32, 3))

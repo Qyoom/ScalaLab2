@@ -20,14 +20,14 @@ object ScalaSchool_type {
   
   val cov: Covariant[AnyRef] = new Covariant[String]
                                                   //> cov  : lab.typestudy2.ScalaSchool_type.Covariant[AnyRef] = lab.typestudy2.Sc
-                                                  //| alaSchool_type$$anonfun$main$1$Covariant$1@2838305b
+                                                  //| alaSchool_type$$anonfun$main$1$Covariant$1@66c07f58
   //val covNot:Covariant[String] = new Covariant[AnyRef] // Error
   
   class Contravariant[-A]
   
   val cont: Contravariant[String] = new Contravariant[AnyRef]
                                                   //> cont  : lab.typestudy2.ScalaSchool_type.Contravariant[String] = lab.typestud
-                                                  //| y2.ScalaSchool_type$$anonfun$main$1$Contravariant$1@39367a2c
+                                                  //| y2.ScalaSchool_type$$anonfun$main$1$Contravariant$1@5925dae8
   //val contNot: Contravariant[AnyRef] = new Contravariant[String] // Error
   
   // ------ Function return types are contravariance ------------- //
@@ -60,13 +60,33 @@ object ScalaSchool_type {
                                                   //| String]
   val menagerie = Seq(new Animal, new Bird, new Chicken, new Duck)
                                                   //> menagerie  : Seq[lab.typestudy2.ScalaSchool_type.Animal] = List(lab.typestu
-                                                  //| dy2.ScalaSchool_type$$anonfun$main$1$Animal$1@3edfb094, lab.typestudy2.Scal
-                                                  //| aSchool_type$$anonfun$main$1$Bird$1@4fc1e4cb, lab.typestudy2.ScalaSchool_ty
-                                                  //| pe$$anonfun$main$1$Chicken$1@4293f455, lab.typestudy2.ScalaSchool_type$$ano
-                                                  //| nfun$main$1$Duck$1@7f8e1a98)
+                                                  //| dy2.ScalaSchool_type$$anonfun$main$1$Animal$1@2e24f4eb, lab.typestudy2.Scal
+                                                  //| aSchool_type$$anonfun$main$1$Bird$1@7c4b87f7, lab.typestudy2.ScalaSchool_ty
+                                                  //| pe$$anonfun$main$1$Chicken$1@42cba8e1, lab.typestudy2.ScalaSchool_type$$ano
+                                                  //| nfun$main$1$Duck$1@48bc6e09)
   for(a <- menagerie) yield a.sound               //> res11: Seq[String] = List(rustle, call, cluck, quack)
   	
   	biophony(menagerie)                       //> res12: Seq[String] = List(rustle, call, cluck, quack)
+  	
+  	//.....Lower type bounds
+  	
+  	val flock = List(new Bird, new Bird)      //> flock  : List[lab.typestudy2.ScalaSchool_type.Bird] = List(lab.typestudy2.S
+                                                  //| calaSchool_type$$anonfun$main$1$Bird$1@690cbe41, lab.typestudy2.ScalaSchool
+                                                  //| _type$$anonfun$main$1$Bird$1@439ed348)
+  	new Chicken :: flock                      //> res13: List[lab.typestudy2.ScalaSchool_type.Bird] = List(lab.typestudy2.Sca
+                                                  //| laSchool_type$$anonfun$main$1$Chicken$1@70413ea6, lab.typestudy2.ScalaSchoo
+                                                  //| l_type$$anonfun$main$1$Bird$1@690cbe41, lab.typestudy2.ScalaSchool_type$$an
+                                                  //| onfun$main$1$Bird$1@439ed348)
+  // List also defines ::[B >: T](x: B) which returns a List[B]. Notice the B >: T. That specifies type B as a superclass of T. That lets us do the right thing when prepending an Animal to a List[Bird]:
+  new Animal :: flock                             //> res14: List[lab.typestudy2.ScalaSchool_type.Animal] = List(lab.typestudy2.S
+                                                  //| calaSchool_type$$anonfun$main$1$Animal$1@4b783ddd, lab.typestudy2.ScalaScho
+                                                  //| ol_type$$anonfun$main$1$Bird$1@690cbe41, lab.typestudy2.ScalaSchool_type$$a
+                                                  //| nonfun$main$1$Bird$1@439ed348)
+  // Wildcard
+  def count(l: List[_]) = l.size                  //> count: (l: List[_])Int
+  count(List("a", "b", "c"))                      //> res15: Int = 3
+  count(menagerie.toList)                         //> res16: Int = 4
+ 
 }
 /*
 

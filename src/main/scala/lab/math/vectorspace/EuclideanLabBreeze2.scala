@@ -1,7 +1,7 @@
 package lab.math.vectorspace
 
 //import math._
-import lab.math.NthRoot._
+import lab.math.NthRoot
 import breeze.linalg._
 import breeze.numerics._
 
@@ -54,7 +54,7 @@ object EuclideanLabBreeze2 extends App {
 	
 	def minkNorm(X0: DenseVector[Double], n: Int): Double = {
 		val X1 = if(n % 2 == 0) X0 else X0.map(x => abs(x)) // TODO: This seems heavy
-		nthRoot(pow(X1, n).sum, n)
+		NthRoot.nthRoot(pow(X1, n).sum, n)
 	}
 	
 	//.. tests ......................//

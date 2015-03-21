@@ -1,12 +1,12 @@
 package lab.math.vectorspace
-
+  
 import breeze.linalg._
 import breeze.numerics._
 import breeze.stats.mean
 
 object SimpleLinearRegression_lab_1 {
 
-  	// ------ Simple Linear Regression Model------ //
+  // ------ Simple Linear Regression Model------ //
 	// Referencing www.Aleks.com "Simple linear regression" for statistical formulas
 	// This is also the equation model that Haistie/Tibshirani present.
   

@@ -1,11 +1,12 @@
 package lab.math.vectorspace
-
-import lab.math.vectorspace.SimpleLinearRegression_lab_1._
+ 
 import breeze.linalg._
+import lab.math.vectorspace.SimpleLinearRegression_lab_1._
 import breeze.numerics._
 import breeze.stats.mean
-
+ 
 object SimpleLinearRegression_lab_3_ws {
+
 	// ------ Data ------------------------------- //
 	// www.Aleks.com Simple linear regression
 	// Sample observed input
@@ -24,7 +25,7 @@ object SimpleLinearRegression_lab_3_ws {
   
   // Variance: average of the squared differences from the Mean.
   val variance = pow(Y - meanY, 2).sum / n        //> variance  : Double = 5.937142857142857
-  // Standard Deviation
+  // Standard Deviation, i.e. average squared difference from the mean.
   val stdDev = sqrt(variance)                     //> stdDev  : Double = 2.4366253009321843
   
   // Convertion to the standard normal distribution (per Aleks)
@@ -36,7 +37,7 @@ object SimpleLinearRegression_lab_3_ws {
   // Referencing www.Aleks.com "Simple linear regression" for statistical formulas
   // Also, it turns out this series is pretty much exactly parallel to the presentation in ch.3
   // in James, Witten, et al (Intro to Statistical Learning)
-  
+ 
   // ------ Model, prediction --------------- //
   // Derive the model from observations
   val model, (slope, intercept) = deriveModel(X, Y)
@@ -53,9 +54,9 @@ object SimpleLinearRegression_lab_3_ws {
   // Prediction output
  
   // ----- Output measures -------- //
-  diagnosticLog(Y, predictions)                   //> Feb 07, 2015 5:47:21 PM com.github.fommil.jni.JniLoader liberalLoad
+  diagnosticLog(Y, predictions)                   //> Mar 21, 2015 12:29:09 AM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/
-                                                  //| jniloader3319352285365169401netlib-native_system-osx-x86_64.jnilib
+                                                  //| jniloader1397202364475145288netlib-native_system-osx-x86_64.jnilib
                                                   //| SSE: 12.124999999999998
                                                   //| mean of redisuals: -9.516197353929913E-16
                                                   //| SST: 41.559999999999995
