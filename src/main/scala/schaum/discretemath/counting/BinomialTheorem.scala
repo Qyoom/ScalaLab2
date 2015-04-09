@@ -4,6 +4,8 @@ object BinomialTheorem extends App {
     
     // recursive
     // See p. 90 Schaum Discrete Mathematics
+    // Naive implementation. 
+	// For large numbers see http://en.wikipedia.org/wiki/Binomial_coefficient#Binomial_coefficient_in_programming_languages
     def binomialCoeficients(n: Int, r: Int): Double = {
         def inner(n: Int, r: Int, n_acc: Int, r_acc: Int): Double = {
 	        if (r >= 1) {
