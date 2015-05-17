@@ -9,6 +9,7 @@ object Composition_lab_1 {
                                                   //| lab_1.R, h: lab.functions.Composition_lab_1.R => lab.functions.Composition_l
                                                   //| ab_1.R)lab.functions.Composition_lab_1.R => lab.functions.Composition_lab_1.
                                                   //| R
+  // params are anonymous functions
   val f = compose({_-1}, {_*2})                   //> f  : lab.functions.Composition_lab_1.R => lab.functions.Composition_lab_1.R 
                                                   //| = <function1>
   f(2)                                            //> res0: lab.functions.Composition_lab_1.R = 3.0
@@ -16,6 +17,7 @@ object Composition_lab_1 {
   f(f(3))                                         //> res2: lab.functions.Composition_lab_1.R = 9.0
   
   // Currying - obvious syntax
+  // composes and returns partial function
   def zscore(mean:R, sd:R) = (x:R) => (x - mean)/sd
                                                   //> zscore: (mean: lab.functions.Composition_lab_1.R, sd: lab.functions.Composit
                                                   //| ion_lab_1.R)lab.functions.Composition_lab_1.R => Double
@@ -25,6 +27,11 @@ object Composition_lab_1 {
   normer(85)                                      //> res5: Double = 0.0
   normer(90)                                      //> res6: Double = 0.625
   normer(70)                                      //> res7: Double = -1.875
+  // both params at once
+  zscore(85, 8)(80)                               //> res8: Double = -0.625
+  
+  def normer1 = zscore(84, 7)                     //> normer1: => lab.functions.Composition_lab_1.R => Double
+  normer1(80)                                     //> res9: Double = -0.5714285714285714
   
   // Currying - sugar syntax
   def zscore2(mean:R, sd:R)(x:R):R = (x-mean)/sd  //> zscore2: (mean: lab.functions.Composition_lab_1.R, sd: lab.functions.Composi
@@ -32,6 +39,6 @@ object Composition_lab_1 {
                                                   //| _lab_1.R
   def normer2 = zscore2(85, 8)_                   //> normer2: => lab.functions.Composition_lab_1.R => lab.functions.Composition_l
                                                   //| ab_1.R
-  normer2(80)                                     //> res8: lab.functions.Composition_lab_1.R = -0.625
-  normer2(75)                                     //> res9: lab.functions.Composition_lab_1.R = -1.25
+  normer2(80)                                     //> res10: lab.functions.Composition_lab_1.R = -0.625
+  normer2(75)                                     //> res11: lab.functions.Composition_lab_1.R = -1.25
 }

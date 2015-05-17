@@ -3,7 +3,6 @@ package schaum.discretemath.counting
 import schaum.discretemath.counting.Factorial._
 
 object SolvedProblems_ch_5 {
-  println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
   // 5.1
   fac(4)                                          //> 3.036344593938168E64
                                                   //| 5.381780668201844E65
