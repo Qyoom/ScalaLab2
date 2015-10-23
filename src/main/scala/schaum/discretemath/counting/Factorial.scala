@@ -2,17 +2,18 @@ package schaum.discretemath.counting
 
 import math._
 
-object Factorial extends Application {
-    
+object Factorial extends App {
+    // >>>...finding the number of permutations of n elements -- Analytic Combinatorics, Flajolet Sedgewick.pdf
+    // n * n-1 ... * (n-(n-1))
 	def fac(n: Int): Int = {
 	    if (n < 0) throw new IllegalArgumentException("Input must be greater than 0")
 	    val orig = n // diagnostic
 	    def recurse(n: Int, prod: Int): Int = {
-	        if (n <= 1) {
-	            println("fac(" + orig + "): " + prod)
-	            prod // return result
-	        }
-	        else recurse(n-1, n*prod)
+	        if (n <= 1) prod // return accumulator
+	        else {
+                println(n + " * " + prod)
+                recurse(n-1, n*prod)
+            }
 	    }
 	    recurse(n, 1)
 	}
@@ -27,11 +28,15 @@ object Factorial extends Application {
 	}
 	
 	/******* TESTS ***************/
+    
+    println("fac(5): " + fac(5))
 	
+    /*
 	println(sterlings(50))
 	println(sterlings2(50))
 	println(sterlings(10))
 	println(sterlings2(10))
+    */
 	
 	/*
 	println("fac(5): " + fac(5))

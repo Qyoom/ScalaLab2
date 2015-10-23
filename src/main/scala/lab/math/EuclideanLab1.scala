@@ -54,7 +54,7 @@ object EuclideanLab1 extends App {
 	 * The Euclidean norm, or Euclidean length, or magnitude of a vector 
 	 * measures the length of the vector
 	 */
-	// Computes Euclidean norm
+	// Computes Euclidean norm, i.e. square root of the sum of squared differences
 	def eucNorm(xs: List[Double]): Double = {
 		// inner tail recursion
 		def inter(xs: List[Double], accum: Double): Double = {

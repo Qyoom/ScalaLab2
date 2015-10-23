@@ -1,4 +1,4 @@
-package calculus_lab
+package lab.calculus.limit
 
 import math._
 

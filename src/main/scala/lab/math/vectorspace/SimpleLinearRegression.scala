@@ -4,7 +4,7 @@ import breeze.linalg._
 import breeze.numerics._
 import breeze.stats.mean
 
-object SimpleLinearRegression_lab_1 {
+object SimpleLinearRegression {
 
   // ------ Simple Linear Regression Model------ //
 	// Referencing www.Aleks.com "Simple linear regression" for statistical formulas
@@ -31,11 +31,11 @@ object SimpleLinearRegression_lab_1 {
 	def fitLine(model: (Double, Double)) (x: Double): Double = {
 		val slope = model._1
 		val intercept = model._2
-		val y = slope * x + intercept
+		val y = slope * x + intercept // y = mx + b
 		y
 	}
   
-	// This provides the estimate for the standard deviation referred to by Inro to Statistical Learning 
+	// This provides the estimate for the standard deviation referred to by Intro to Statistical Learning 
 	// (James, Witten, Hastie and Tibshirani), p.65
 	def sumSquaredResiduals(Y_obs: DenseVector[Double], Y_est: DenseVector[Double]): Double = {
 		// Sum of the squared errors (residuals, or difference between observed and predicted)

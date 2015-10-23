@@ -3,7 +3,7 @@ package schaum.discretemath.graph
 object LinkedList_Pointers_lab_1 {
   
 	// Exercise: Implement linked list mechanism for customers
-	// Data index starts at 1 instead of 0, hense the -1
+	// Data index starts at 1 instead of 0, hense the -1 for indexing.
 
 	class Customer(val name: String, salesperson: Int, next: Int) {
 		def list: List[Customer] = {

@@ -18,19 +18,21 @@ object VectorSimilarity_lab {
 	val Dv = DenseVector(0.0, 1.1, 0.0, 32.4) //> Dv  : breeze.linalg.DenseVector[Double] = DenseVector(0.0, 1.1, 0.0, 32.4)
 	
 	
-	eucDist(Av, Bv)                           //> Mar 22, 2015 9:05:39 PM com.github.fommil.jni.JniLoader liberalLoad
+	eucDist(Av, Bv)                           //> Jun 25, 2015 5:53:00 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/j
-                                                  //| niloader3935667273067526021netlib-native_system-osx-x86_64.jnilib
+                                                  //| niloader3935235814455411902netlib-native_system-osx-x86_64.jnilib
                                                   //| res0: Double = 2.651414716712571
 	Av dot Bv                                 //> res1: Double = 108.94
 	eucNorm(Av)                               //> res2: Double = 9.211405973031479
 	norm(Av) // Breeze, same                  //> res3: Double = 9.211405973031479
 	eucNorm(Bv)                               //> res4: Double = 11.83469475736489
-	eucNorm(Av) * eucNorm(Bv)                 //> res5: Double = 109.01417797699527
+	Bv.norm()                                 //> res5: Double = 11.83469475736489
+	eucNorm(Av) * eucNorm(Bv)                 //> res6: Double = 109.01417797699527
 	
 	// Vector Similarity
 	val cosineAvBv = (Av dot Bv) / (eucNorm(Av) * eucNorm(Bv))
                                                   //> cosineAvBv  : Double = 0.9993195566083989
+	(Av dot Bv) / (Av.norm() * Bv.norm())     //> res7: Double = 0.9993195566083989
 	
 	val cosineAvCv = (Av dot Cv) / (eucNorm(Av) * eucNorm(Cv))
                                                   //> cosineAvCv  : Double = 0.79921016883338

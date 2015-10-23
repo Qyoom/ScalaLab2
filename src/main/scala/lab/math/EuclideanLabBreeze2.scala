@@ -27,6 +27,7 @@ object EuclideanLabBreeze2 extends App {
 	println("res2: " + res2)
 
 	///// Computes Euclidean norm ////////////////////////////////////////////
+    // Square root of the sum of the squared values in the vector
 	def eucNorm(X: DenseVector[Double]): Double = {
 		sqrt(pow(X, 2).sum)
 	}

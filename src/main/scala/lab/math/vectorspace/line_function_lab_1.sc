@@ -8,20 +8,20 @@ object line_function_lab_1 {
   	 * to calculated slope and intercept.
   	 */
   	type T = Double
-  def line (x: T, y: T) (x2: T, y2: T) = {
-  		val slope = (y2 - y) / (x2 - x)
+  def line (x0: T, y0: T) (x1: T, y1: T) = {
+  		val slope = (y1 - y0) / (x1 - x0) // delta_y / delta_x
   		// b = y - mx
-  		val intercept = y - slope*x
+  		val intercept = y0 - slope * x0
   		
   		println("slope:" + slope + " intercept:" + intercept)
   		
   		// Return function(any_x) => y_output
   		// new_y = m*new_x + b
-  		(new_x:T) => slope*new_x + intercept // solving for new_y
-  	}                                         //> line: (x: lab.math.vectorspace.line_function_lab_1.T, y: lab.math.vectorspac
-                                                  //| e.line_function_lab_1.T)(x2: lab.math.vectorspace.line_function_lab_1.T, y2:
-                                                  //|  lab.math.vectorspace.line_function_lab_1.T)lab.math.vectorspace.line_functi
-                                                  //| on_lab_1.T => Double
+  		(new_x:T) => slope * new_x + intercept // solving for new_y
+  	}                                         //> line: (x0: lab.math.vectorspace.line_function_lab_1.T, y0: lab.math.vectorsp
+                                                  //| ace.line_function_lab_1.T)(x1: lab.math.vectorspace.line_function_lab_1.T, y
+                                                  //| 1: lab.math.vectorspace.line_function_lab_1.T)lab.math.vectorspace.line_func
+                                                  //| tion_lab_1.T => Double
   	
   val f1 = line(-3, -6) (5, 4)                    //> slope:1.25 intercept:-2.25
                                                   //| f1  : lab.math.vectorspace.line_function_lab_1.T => Double = <function1>
@@ -33,3 +33,11 @@ object line_function_lab_1 {
   val f2 = line(-6,-2)(-3,-6)                     //> slope:-1.3333333333333333 intercept:-10.0
                                                   //| f2  : lab.math.vectorspace.line_function_lab_1.T => Double = <function1>
 }
+/*
+
+
+
+
+
+
+*/

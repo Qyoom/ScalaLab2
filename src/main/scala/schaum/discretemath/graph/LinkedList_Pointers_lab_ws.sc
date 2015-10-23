@@ -1,18 +1,23 @@
 package schaum.discretemath.graph
+
 import schaum.discretemath.graph.LinkedList_Pointers_lab_1._
+
 object LinkedList_Pointers_lab_ws {
 		
 	salespeople.foreach(s => {
-		println(s.name + " customers:")
+		println("\n" + s.name + " customers:")
 		s.customers.foreach(c => println(c.name))
-	})                                        //> Jones customers:
+	})                                        //> 
+                                                  //| Jones customers:
                                                   //| Drew
                                                   //| Farmer
+                                                  //| 
                                                   //| Ray customers:
                                                   //| Brown
                                                   //| Clark
                                                   //| Geller
                                                   //| Infeld
+                                                  //| 
                                                   //| Smith customers:
                                                   //| Adams
                                                   //| Evans

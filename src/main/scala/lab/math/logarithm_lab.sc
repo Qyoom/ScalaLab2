@@ -1,4 +1,5 @@
 package lab.math
+
 import math._
 
 object logarithm_lab {
@@ -68,61 +69,66 @@ object logarithm_lab {
   log2(pow(2,4))                                  //> res29: Double = 4.0
   log2(pow(2,8))                                  //> res30: Double = 8.0
   
+  log2(999)                                       //> res31: Double = 9.96434086779242
+  
   // https://groups.google.com/forum/#!topic/scala-language/K5tbYSYqQc8
   def log3(x: Double) = scala.math.log(x)/scala.math.log(3)
                                                   //> log3: (x: Double)Double
-  log3(1)                                         //> res31: Double = 0.0
-  log3(3)                                         //> res32: Double = 1.0
-  log3(9)                                         //> res33: Double = 2.0
-  log3(27)                                        //> res34: Double = 3.0
+  log3(1)                                         //> res32: Double = 0.0
+  log3(3)                                         //> res33: Double = 1.0
+  log3(9)                                         //> res34: Double = 2.0
+  log3(27)                                        //> res35: Double = 3.0
   
   // https://groups.google.com/forum/#!topic/scala-language/K5tbYSYqQc8
   def log4(x: Double) = scala.math.log(x)/scala.math.log(4)
                                                   //> log4: (x: Double)Double
-  log4(1)                                         //> res35: Double = 0.0
-  log4(4)                                         //> res36: Double = 1.0
-  log4(3)                                         //> res37: Double = 0.7924812503605781
-  log4(64)                                        //> res38: Double = 3.0
+  log4(1)                                         //> res36: Double = 0.0
+  log4(4)                                         //> res37: Double = 1.0
+  log4(3)                                         //> res38: Double = 0.7924812503605781
+  log4(64)                                        //> res39: Double = 3.0
   
   // https://groups.google.com/forum/#!topic/scala-language/K5tbYSYqQc8
   def log5(x: Double) = scala.math.log(x)/scala.math.log(5)
                                                   //> log5: (x: Double)Double
-  log5(1)                                         //> res39: Double = 0.0
-  log5(5)                                         //> res40: Double = 1.0
-  log5(25)                                        //> res41: Double = 2.0
-  log5(125)                                       //> res42: Double = 3.0000000000000004
+  log5(1)                                         //> res40: Double = 0.0
+  log5(5)                                         //> res41: Double = 1.0
+  log5(25)                                        //> res42: Double = 2.0
+  log5(125)                                       //> res43: Double = 3.0000000000000004
   
   // https://groups.google.com/forum/#!topic/scala-language/K5tbYSYqQc8
   def log16(x: Double) = scala.math.log(x)/scala.math.log(16)
                                                   //> log16: (x: Double)Double
-  log16(1)                                        //> res43: Double = 0.0
-  log16(4)                                        //> res44: Double = 0.5
-  log16(8)                                        //> res45: Double = 0.75
-  log16(16)                                       //> res46: Double = 1.0
-  log16(32)                                       //> res47: Double = 1.25
+  log16(1)                                        //> res44: Double = 0.0
+  log16(4)                                        //> res45: Double = 0.5
+  log16(8)                                        //> res46: Double = 0.75
+  log16(16)                                       //> res47: Double = 1.0
+  log16(32)                                       //> res48: Double = 1.25
   
-  log16(pow(16,3))                                //> res48: Double = 3.0
+  log16(pow(16,3))                                //> res49: Double = 3.0
   
    /** Returns the base 10 logarithm of the given `Double` value. */
 	 //def log10(x: Double): Double = java.lang.Math.log10(x)
-	 log10(1.0/10)                            //> res49: Double = -1.0
-	 log10(1)                                 //> res50: Double = 0.0
-   log10(10)                                      //> res51: Double = 1.0
-   log10(100)                                     //> res52: Double = 2.0
-   log10(1000)                                    //> res53: Double = 3.0
-   log10(.1)                                      //> res54: Double = -1.0
+	 log10(1.0/10)                            //> res50: Double = -1.0
+	 log10(1)                                 //> res51: Double = 0.0
+   log10(10)                                      //> res52: Double = 1.0
+   log10(100)                                     //> res53: Double = 2.0
+   log10(1000)                                    //> res54: Double = 3.0
+   log10(.1)                                      //> res55: Double = -1.0
+   
+   pow(10,3)-1                                    //> res56: Double = 999.0
+   log10(999)                                     //> res57: Double = 2.9995654882259823
        
    //.....................//
    
-   log5(125)                                      //> res55: Double = 3.0000000000000004
-   log5(25)                                       //> res56: Double = 2.0
-   log5(1000)                                     //> res57: Double = 4.29202967422018
-   log5(25 * 1000)                                //> res58: Double = 6.29202967422018
-   log5(25) + log5(1000)                          //> res59: Double = 6.29202967422018
-   log5(25 * 125)                                 //> res60: Double = 5.0
-   log5(25) + log5(125)                           //> res61: Double = 5.0
-   log5(1000) - log5(25)                          //> res62: Double = 2.2920296742201796
-   log5(1000/25)                                  //> res63: Double = 2.292029674220179
+   log5(125)                                      //> res58: Double = 3.0000000000000004
+   log5(25)                                       //> res59: Double = 2.0
+   log5(1000)                                     //> res60: Double = 4.29202967422018
+   log5(25 * 1000)                                //> res61: Double = 6.29202967422018
+   log5(25) + log5(1000)                          //> res62: Double = 6.29202967422018
+   log5(25 * 125)                                 //> res63: Double = 5.0
+   log5(25) + log5(125)                           //> res64: Double = 5.0
+   log5(1000) - log5(25)                          //> res65: Double = 2.2920296742201796
+   log5(1000/25)                                  //> res66: Double = 2.292029674220179
    
    //-------------------------------------//
    
@@ -146,17 +152,17 @@ object logarithm_lab {
    
    //...................//
    
-   expFunc(4, 3)                                  //> res64: Double = 64.0
-   logFunc(4, 64)                                 //> res65: Double = 3.0
-   expFunc(4, logFunc(4, expFunc(4, 3)))          //> res66: Double = 64.0
-   logFunc(4, expFunc(4, 3))                      //> res67: Double = 3.0
-   logFunc(-4, 64)                                //> res68: Double = NaN
+   expFunc(4, 3)                                  //> res67: Double = 64.0
+   logFunc(4, 64)                                 //> res68: Double = 3.0
+   expFunc(4, logFunc(4, expFunc(4, 3)))          //> res69: Double = 64.0
+   logFunc(4, expFunc(4, 3))                      //> res70: Double = 3.0
+   logFunc(-4, 64)                                //> res71: Double = NaN
    
-   logFunc(3, (1.0/81))                           //> res69: Double = -4.0
-   logFunc(4, 16)                                 //> res70: Double = 2.0
-   logFunc(8, 1)                                  //> res71: Double = 0.0
-   logFunc(10, (1.0/10.0))                        //> res72: Double = -0.9999999999999998
-   expFunc(10, -1)                                //> res73: Double = 0.1
+   logFunc(3, (1.0/81))                           //> res72: Double = -4.0
+   logFunc(4, 16)                                 //> res73: Double = 2.0
+   logFunc(8, 1)                                  //> res74: Double = 0.0
+   logFunc(10, (1.0/10.0))                        //> res75: Double = -0.9999999999999998
+   expFunc(10, -1)                                //> res76: Double = 0.1
    
-   expFunc(2, -3)                                 //> res74: Double = 0.125
+   expFunc(2, -3)                                 //> res77: Double = 0.125
 }

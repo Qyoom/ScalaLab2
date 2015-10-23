@@ -1,7 +1,7 @@
 package lab.math.vectorspace
  
 import breeze.linalg._
-import lab.math.vectorspace.SimpleLinearRegression_lab_1._
+import lab.math.vectorspace.SimpleLinearRegression._
 import breeze.numerics._
 import breeze.stats.mean
  
@@ -54,9 +54,9 @@ object SimpleLinearRegression_lab_3_ws {
   // Prediction output
  
   // ----- Output measures -------- //
-  diagnosticLog(Y, predictions)                   //> Mar 22, 2015 6:25:08 PM com.github.fommil.jni.JniLoader liberalLoad
+  diagnosticLog(Y, predictions)                   //> Aug 19, 2015 4:42:26 PM com.github.fommil.jni.JniLoader liberalLoad
                                                   //| INFO: successfully loaded /var/folders/qk/q84p77h56y371pyw0vp69j1h0000gn/T/
-                                                  //| jniloader2352825672617846230netlib-native_system-osx-x86_64.jnilib
+                                                  //| jniloader2983585083280175817netlib-native_system-osx-x86_64.jnilib
                                                   //| SSE: 12.124999999999998
                                                   //| mean of redisuals: -9.516197353929913E-16
                                                   //| SST: 41.559999999999995
