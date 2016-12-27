@@ -1,13 +1,13 @@
-name := "ScalaLab"
+name := "ScalaLab2"
 
 version := "0.1"
 
-scalaVersion := "2.10.4"
+scalaVersion := "2.11.6"
 
 libraryDependencies ++= Seq(
-  "org.scalanlp" % "breeze-viz_2.10" % "0.5.1",
-  "org.scalanlp" % "breeze_2.10" % "0.9",
-  "org.scalanlp" % "breeze-natives_2.10" % "0.9"
+  "org.scalanlp" %% "breeze" % "0.12",
+  "org.scalanlp" %% "breeze-natives" % "0.12",
+  "org.scalanlp" %% "breeze-viz" % "0.12"
 )
 
 resolvers += "Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases/"
